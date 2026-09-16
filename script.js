@@ -38,6 +38,7 @@ function initHeroGlobe() {
     width: 0,
     height: 0,
     scale: 1,
+    rotation: [106, -28, 0],
     isDragging: false,
     lastInteraction: Date.now(),
     userNode: { ...defaultNode },
@@ -183,14 +184,14 @@ function initHeroGlobe() {
     projection
       .translate([state.width * 0.64, state.height * 0.54])
       .scale(Math.min(state.width, state.height) * 0.45 * state.scale)
-      .rotate([106, -28, 0]);
+      .rotate(state.rotation);
     render();
   }
 
   function tick() {
     if (!state.isDragging && Date.now() - state.lastInteraction > 1400) {
-      const rotate = projection.rotate();
-      projection.rotate([rotate[0] + 0.08, rotate[1], rotate[2]]);
+      state.rotation = [state.rotation[0] + 0.08, state.rotation[1], state.rotation[2]];
+      projection.rotate(state.rotation);
       render();
     }
     requestAnimationFrame(tick);
@@ -204,13 +205,12 @@ function initHeroGlobe() {
           state.lastInteraction = Date.now();
         })
         .on('drag', event => {
-          const rotate = projection.rotate();
-          const sensitivity = 0.25;
-          projection.rotate([
-            rotate[0] + event.dx * sensitivity,
-            Math.max(-45, Math.min(45, rotate[1] - event.dy * sensitivity)),
-            rotate[2]
-          ]);
+          state.rotation = [
+            state.rotation[0] + event.dx * 0.25,
+            Math.max(-45, Math.min(45, state.rotation[1] - event.dy * 0.25)),
+            state.rotation[2]
+          ];
+          projection.rotate(state.rotation);
           state.lastInteraction = Date.now();
           render();
         })
@@ -250,6 +250,8 @@ function initHeroGlobe() {
           lon: position.coords.longitude,
           label: 'Visitor node'
         };
+        state.rotation = [-state.userNode.lon, -state.userNode.lat, 0];
+        projection.rotate(state.rotation);
         state.lastInteraction = Date.now();
         render();
       },
