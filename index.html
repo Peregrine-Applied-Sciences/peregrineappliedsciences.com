@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Peregrine Applied Sciences is a defense engineering and applied R&D company focused on RF/C5ISR, sensing, autonomy, aerospace systems, software, integration, and technical data." />
+  <meta name="description" content="Peregrine Applied Sciences is a defense engineering and applied R&D company focused on RF/C5ISR, autonomy, aerospace systems, software, integration, and technical data." />
   <meta name="theme-color" content="#0b0e14" />
   <title>Peregrine Applied Sciences | Defense Engineering & Applied R&D</title>
   <link rel="icon" href="favicon.ico" sizes="any" />
@@ -11,7 +11,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180x180.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body data-page="home">
@@ -24,193 +24,228 @@
         <img src="assets/peregrine-header-logo.png" alt="Peregrine Applied Sciences" class="brand-logo" />
       </picture>
     </a>
-    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">MENU</button>
+    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">Menu</button>
     <nav class="site-nav" aria-label="Primary">
-      <a href="index.html#company" data-nav="home">COMPANY</a>
-      <a href="index.html#programs">PROGRAMS</a>
-      <a href="capabilities.html" data-nav="capabilities">CAPABILITIES</a>
+      <a href="index.html#company" data-nav="home">Company</a>
+      <a href="index.html#programs">Programs</a>
+      <a href="capabilities.html" data-nav="capabilities">Capabilities</a>
       <a href="pacn-01.html" data-nav="pacn">PACN-01</a>
-      <a href="stage.html" data-nav="stage">CURRENT STAGE</a>
-      <a href="#contact" class="nav-cta">CONTACT</a>
+      <a href="stage.html" data-nav="stage">Current stage</a>
+      <a href="index.html#contact" class="nav-cta">Contact</a>
     </nav>
   </header>
 
   <main id="top">
-    <section class="hero hero-home">
-      <img src="assets/hero-uav.png" alt="Representative unmanned aircraft development imagery" class="hero-image" />
-      <div class="hero-scanlines" aria-hidden="true"></div>
-      <div class="hero-shade" aria-hidden="true"></div>
-      <div class="hero-content shell">
-        <div class="status-strip" aria-label="Current program status">
-          <span><i class="pulse-dot"></i> FOVEA // ENGINEERING MVP</span>
-          <span>PACN-01 // ARCHITECTURE ACTIVE</span>
-          <span>PROTOTYPE PARTNER // SEEKING</span>
-        </div>
-
+    <section class="hero hero-globe">
+      <div class="hero-globe-stage" aria-hidden="true">
+        <canvas id="heroGlobeCanvas"></canvas>
+      </div>
+      <div class="hero-shade"></div>
+      <div class="shell hero-layout">
         <div class="hero-copywrap">
-          <p class="eyebrow">DEFENSE ENGINEERING // APPLIED R&amp;D // C5ISR // RF // AUTONOMOUS SYSTEMS</p>
-          <h1>Engineering across the seam between sensing, communications, autonomy, and the aircraft carrying them.</h1>
-          <p class="hero-copy">Peregrine Applied Sciences is a small multidisciplinary engineering company building mission software, RF/C5ISR architectures, airborne sensing concepts, and the technical data required to move complex systems from requirements into testable hardware and software.</p>
+          <p class="eyebrow">Defense engineering • Applied R&amp;D</p>
+          <h1>Engineering for difficult environments.</h1>
+          <p class="hero-copy">
+            Peregrine Applied Sciences develops RF/C5ISR, autonomy, aerospace,
+            and systems-engineering solutions for government and defense programs.
+          </p>
+          <p class="hero-copy hero-copy-secondary">
+            Current focus: first-pass engineering contracts, FOVEA software maturation,
+            and partner integration for PACN-01 and P-360.
+          </p>
           <div class="hero-actions">
-            <a class="button primary" href="#programs">VIEW PROGRAMS</a>
-            <a class="button ghost" href="capabilities.html">CAPABILITIES</a>
-            <a class="button ghost" href="stage.html">WORK WITH US</a>
+            <a class="button primary" href="capabilities.html">View capabilities</a>
+            <a class="button ghost" href="pacn-01.html">Explore PACN-01</a>
           </div>
-        </div>
-
-        <div class="hero-hud">
-          <div class="hud-panel"><span>SOFTWARE</span><strong>FOVEA 0.2.0 ENGINEERING MVP</strong></div>
-          <div class="hud-panel"><span>HARDWARE</span><strong>PACN-01 / P-360 IN DEVELOPMENT</strong></div>
-          <div class="hud-panel"><span>BUSINESS</span><strong>FIRST PERIODS OF PERFORMANCE</strong></div>
+          <div class="hero-status-strip">
+            <span>UEI: XJT8AM2R4MT8</span>
+            <span>CAGE: 225F1</span>
+            <span>NAICS: 541330 • 541715</span>
+          </div>
+          <p class="hero-note">
+            Interactive globe shows a representative PACN node, notional tracks,
+            and visitor geolocation when browser permission is available.
+          </p>
         </div>
       </div>
     </section>
 
-    <section id="company" class="section section-dark">
+    <section id="company" class="section">
       <div class="shell">
         <div class="section-head split-head">
           <div>
-            <p class="kicker">COMPANY / CURRENT STATE</p>
-            <h2>A small engineering team built around real sustainment, avionics, RF, CAD, and software work.</h2>
+            <p class="kicker">Company</p>
+            <h2>Built to solve integration problems.</h2>
           </div>
-          <p class="section-lead">Peregrine is early-stage, but not concept-only. We are actively developing software, system architectures, detailed engineering artifacts, and partner pathways while pursuing bounded government and prime-contractor work that establishes documented performance.</p>
+          <p class="section-lead">
+            Peregrine sits at the intersection of RF, software, systems engineering,
+            avionics, modeling, and technical data.
+          </p>
         </div>
 
-        <div class="metric-grid">
-          <article class="metric-card"><span>RF / DEPOT EXPERIENCE</span><strong>20 YEARS</strong><p>Army RF, retransmission, sustainment, troubleshooting, integration, and depot-level experience represented in the founding team.</p></article>
-          <article class="metric-card"><span>MECHANICAL / CAD EXPERIENCE</span><strong>30 YEARS</strong><p>Detailed modeling, drawing packages, producibility support, configuration-controlled documentation, and mechanical integration.</p></article>
-          <article class="metric-card"><span>SOFTWARE STATUS</span><strong>0.2.0</strong><p>FOVEA Engine and Peregrine Mission Console engineering MVP with packaged Windows/Linux application workflows and qualification gates.</p></article>
-          <article class="metric-card"><span>FEDERAL IDENTITY</span><strong>CAGE 225F1</strong><p>UEI XJT8AM2R4MT8. SAM.gov legal-name update from Anchorpoint Managed Technologies LLC to Peregrine Applied Sciences LLC is pending.</p></article>
+        <div class="info-grid three-up">
+          <article class="info-card">
+            <span class="card-kicker">01</span>
+            <h3>RF and C5ISR</h3>
+            <p>
+              RF architecture, tactical networking, sensing support,
+              communications engineering, and integration analysis.
+            </p>
+          </article>
+          <article class="info-card">
+            <span class="card-kicker">02</span>
+            <h3>Software and autonomy</h3>
+            <p>
+              Mission logic, decision support, operator workflows,
+              simulation tooling, and distributed-systems software.
+            </p>
+          </article>
+          <article class="info-card">
+            <span class="card-kicker">03</span>
+            <h3>Prototype and test</h3>
+            <p>
+              CAD, drawing support, lab integration, instrumentation,
+              verification planning, and technical reporting.
+            </p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="programs" class="section">
+    <section id="programs" class="section section-dark">
       <div class="shell">
         <div class="section-head">
-          <p class="kicker">PROGRAMS</p>
-          <h2>Three development threads, one system-level engineering approach.</h2>
-          <p class="section-lead">Peregrine is converging mission software, airborne communications and sensing, and a future purpose-built aircraft into a common architecture. Public descriptions are intentionally limited to non-sensitive development information.</p>
+          <p class="kicker">Programs</p>
+          <h2>Three lines of effort.</h2>
+          <p class="section-lead">
+            Public program descriptions below are intentionally high level and non-sensitive.
+          </p>
         </div>
 
         <div class="program-grid">
-          <article class="program-card featured">
-            <div class="program-topline"><span>FOVEA ENGINE</span><b>SOFTWARE // ENGINEERING MVP</b></div>
-            <h3>Mission, tracking, cooperative fusion, radar-control, simulation, and operator software.</h3>
-            <p>FOVEA is the mission software stack supporting PACN-01 development. The Peregrine Mission Console provides the operator-facing environment for scenario construction, geographic operations, track inspection, replay, network topology, cooperative-source visualization, and decision provenance.</p>
-            <ul class="data-list compact">
-              <li>Native simulation and mission-state runtime</li>
-              <li>Tracking and cooperative multi-source fusion</li>
-              <li>Radar tasking / control adapter architecture</li>
-              <li>Offline-capable mission console and replay workflow</li>
-            </ul>
-            <a class="text-link" href="pacn-01.html#fovea">SEE FOVEA IN THE PACN-01 ARCHITECTURE →</a>
-          </article>
-
           <article class="program-card">
-            <div class="program-topline"><span>PACN-01</span><b>SYSTEM // ACTIVE DEVELOPMENT</b></div>
-            <h3>A modular airborne edge node for communications, sensing, and distributed mission operations.</h3>
-            <p>PACN-01 has evolved beyond the original airborne relay concept. The current development architecture combines configurable RF interfaces, sensor/radar integration points, edge mission compute, cooperative track exchange, and FOVEA mission services.</p>
-            <p class="note">Hardware and airframe integration remain development activities; public specifications are design objectives until verified in prototype and flight test.</p>
-            <a class="text-link" href="pacn-01.html">EXPLORE PACN-01 →</a>
+            <span class="card-label">PACN-01</span>
+            <h3>Airborne edge node</h3>
+            <p>
+              A modular airborne node for communications, mission compute,
+              track services, and distributed sensing workflows.
+            </p>
+            <a href="pacn-01.html">Program details</a>
           </article>
-
           <article class="program-card">
-            <div class="program-topline"><span>P-360 STOOP</span><b>AIRCRAFT // DESIGN-STAGE</b></div>
-            <h3>A Group 3 VTOL aircraft concept intended to carry persistent sensing and communications payloads.</h3>
-            <p>P-360 is Peregrine's purpose-built airframe development path for later phases of the architecture. Current work is design and analysis, with radar-node and extended-mission variants under study.</p>
-            <p class="note">Published P-360 performance values are engineering targets, not flight-verified performance.</p>
-            <a class="text-link" href="stage.html#airframe">SEE THE PROTOTYPE PARTNER NEED →</a>
+            <span class="card-label">FOVEA</span>
+            <h3>Mission software</h3>
+            <p>
+              FOVEA Engine and Peregrine Mission Console support simulation,
+              cooperative fusion, decision provenance, and operator workflows.
+            </p>
+            <a href="pacn-01.html#software">Software overview</a>
+          </article>
+          <article class="program-card">
+            <span class="card-label">P-360</span>
+            <h3>Future airframe path</h3>
+            <p>
+              A longer-term purpose-built aircraft concept intended to host advanced payloads,
+              autonomy, and persistent mission services.
+            </p>
+            <a href="stage.html#next">What comes next</a>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="visual-section">
-      <img src="assets/aircraft-detail.png" alt="Representative aerospace engineering detail" />
-      <div class="visual-overlay" aria-hidden="true"></div>
-      <div class="shell visual-copy">
-        <p class="kicker">ENGINEERING METHOD</p>
-        <h2>Requirements first. Interfaces defined. Assumptions labeled. Performance verified before it becomes a claim.</h2>
-      </div>
-    </section>
-
-    <section class="section section-dark">
+    <section class="section media-section">
       <div class="shell">
         <div class="section-head split-head">
           <div>
-            <p class="kicker">CAPABILITIES</p>
-            <h2>Engineering depth across the system lifecycle.</h2>
+            <p class="kicker">Peregrine Mission Console</p>
+            <h2>Mission software you can see.</h2>
           </div>
-          <div>
-            <p class="section-lead">Our near-term contract focus is deliberately practical: scoped work packages in systems engineering, RF/C5ISR, technical data, integration, CAD, test, sustainment, and prototype support.</p>
-            <a class="button primary small" href="capabilities.html">VIEW FULL CAPABILITIES + PDF</a>
-          </div>
+          <p class="section-lead">
+            FOVEA and Peregrine Mission Console are already producing usable operator workflows for scenario design, tracking, replay, network topology, and decision traceability.
+          </p>
         </div>
+        <figure class="media-card media-card-wide">
+          <img src="assets/mission-console.webp" alt="Peregrine Mission Console simulation interface" loading="lazy" />
+          <figcaption>Current engineering interface for FOVEA / PACN-01 simulation and mission analysis.</figcaption>
+        </figure>
+      </div>
+    </section>
 
-        <div class="cap-grid">
-          <article class="tech-card"><span>01</span><h3>Systems Engineering</h3><p>Requirements decomposition, architecture, ICDs, trade studies, verification planning, configuration, and technical baselines.</p></article>
-          <article class="tech-card"><span>02</span><h3>RF / Communications</h3><p>Tactical RF, retransmission, antennas, link architecture, RF payload integration, test, troubleshooting, and sustainment.</p></article>
-          <article class="tech-card"><span>03</span><h3>Electrical / Avionics</h3><p>Airborne electronics, embedded systems, power architecture, harnessing, instrumentation, integration, and fault isolation.</p></article>
-          <article class="tech-card"><span>04</span><h3>Mechanical / CAD</h3><p>3D modeling, detailed drawings, mechanical packaging, structural concepts, producibility, and technical documentation.</p></article>
-          <article class="tech-card"><span>05</span><h3>Software / Algorithms</h3><p>Tracking, sensor fusion, autonomy support, simulation, AI/security research, data processing, and mission software.</p></article>
-          <article class="tech-card"><span>06</span><h3>Prototype / Integration</h3><p>Design-build-test cycles, bench integration, subsystem validation, root-cause analysis, test automation, and engineering reports.</p></article>
+    <section class="section">
+      <div class="shell">
+        <div class="section-head split-head">
+          <div>
+            <p class="kicker">What we need now</p>
+            <h2>Partners that help us move faster.</h2>
+          </div>
+          <p class="section-lead">
+            Peregrine is ready for small, bounded engineering work while maturing
+            the first demonstrable PACN-01 / FOVEA prototype path.
+          </p>
+        </div>
+        <div class="info-grid three-up">
+          <article class="info-card">
+            <span class="card-kicker">A</span>
+            <h3>Initial contract work</h3>
+            <p>Subsystem engineering, integration support, technical studies, test support, and drawing-package development.</p>
+          </article>
+          <article class="info-card">
+            <span class="card-kicker">B</span>
+            <h3>Prototype partners</h3>
+            <p>Airframe, UAS, payload-integration, and fabrication partners aligned with rapid technical risk reduction.</p>
+          </article>
+          <article class="info-card">
+            <span class="card-kicker">C</span>
+            <h3>Research collaboration</h3>
+            <p>Universities, labs, and suppliers interested in mission software, RF payloads, and systems experimentation.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="team" class="section">
+    <section id="founders" class="section section-dark">
       <div class="shell">
         <div class="section-head">
-          <p class="kicker">FOUNDING ENGINEERING TEAM</p>
-          <h2>Different backgrounds, deliberately overlapping at the interfaces.</h2>
+          <p class="kicker">Leadership</p>
+          <h2>Built on real engineering experience.</h2>
         </div>
-
-        <div class="team-grid">
-          <article class="team-card">
-            <span class="role">FOUNDER / MANAGING MEMBER // PRESIDENT &amp; CHIEF ENGINEER</span>
+        <div class="founder-grid founder-grid-three">
+          <article class="founder-card">
+            <div class="founder-meta">President &amp; Chief Engineer</div>
             <h3>Austin Howard</h3>
-            <p>Former U.S. Air Force F-16 avionics technician and systems engineer, currently pursuing a B.S. in Electrical Engineering at Arizona State University. Experience includes tactical data-link and RF systems engineering, system architecture, CAD, integration, test, technical documentation, and AI/security research including InjectLab.</p>
+            <p>
+              Air Force veteran, F-16 avionics technician, systems engineer, and ASU electrical engineering student.
+              Austin brings mission-systems thinking, CAD support, technical documentation, and hands-on RF / integration experience.
+            </p>
+            <p>
+              He also created InjectLab, a research-oriented AI effort referenced for its technical novelty and applied experimentation.
+            </p>
           </article>
-          <article class="team-card">
-            <span class="role">COFOUNDER // CHIEF OF RF ENGINEERING</span>
+          <article class="founder-card">
+            <div class="founder-meta">Chief RF Engineering Lead</div>
             <h3>Raul Negrao</h3>
-            <p>Twenty years of Army RF, retransmission, sustainment, field communications, troubleshooting, and depot-level experience across a broad range of tactical communications systems. Leads RF architecture, integration, test, troubleshooting, and sustainment-informed design.</p>
+            <p>
+              Raul brings 20 years of Army RF, retransmission, depot-level,
+              and field communications experience across a wide range of Army systems.
+            </p>
+            <p>
+              His background anchors Peregrine's understanding of operational communications problems,
+              maintainability, and military field realities.
+            </p>
           </article>
-          <article class="team-card">
-            <span class="role">COFOUNDER // MECHANICAL DESIGN LEAD</span>
+          <article class="founder-card">
+            <div class="founder-meta">Mechanical Design Lead</div>
             <h3>Jose Escobedo</h3>
-            <p>Thirty years of CAD modeling, drafting, drawing-package, and mechanical design experience. Leads detailed technical drawings, packaging, producibility support, configuration-controlled design documentation, and mechanical integration.</p>
+            <p>
+              Jose brings 30 years of CAD modeling, dimensional-drawing,
+              and technical-data-package experience.
+            </p>
+            <p>
+              He supports Peregrine's transition from concept to producible design,
+              configuration discipline, and mechanical documentation.
+            </p>
           </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section status-section">
-      <div class="shell status-layout">
-        <div>
-          <p class="kicker">FEDERAL / INDUSTRY READINESS</p>
-          <h2>Registered entity. Transparent transition. Building documented performance.</h2>
-        </div>
-        <div class="status-box">
-          <span>ENTITY DATA</span>
-          <strong>UEI XJT8AM2R4MT8 // CAGE 225F1</strong>
-          <p>Peregrine Applied Sciences LLC is the approved legal name of the same Texas LLC formerly named Anchorpoint Managed Technologies LLC. The SAM.gov legal-name update is pending, so the active federal record may temporarily display the former name.</p>
-          <p>Primary NAICS: 541330 Engineering Services. Secondary NAICS: 541715 Engineering R&amp;D.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-dark next-section">
-      <div class="shell next-layout">
-        <div>
-          <p class="kicker">WHAT'S NEXT</p>
-          <h2>The next phase is not more concept art. It is contract performance, software qualification, hardware integration, and flight-relevant prototyping.</h2>
-        </div>
-        <div class="next-list">
-          <a href="stage.html#contracts"><span>01</span><div><strong>FIRST CONTRACT WORK</strong><p>Scoped engineering and sustainment work that establishes documented periods of performance.</p></div></a>
-          <a href="stage.html#software"><span>02</span><div><strong>FOVEA DEBUG / QUALIFICATION</strong><p>Close remaining defects, harden the software boundary, and prepare representative hardware-in-the-loop integration.</p></div></a>
-          <a href="stage.html#airframe"><span>03</span><div><strong>PROTOTYPE / AIRFRAME PARTNER</strong><p>Integrate on a mature surrogate airframe before committing to a purpose-built flight article.</p></div></a>
         </div>
       </div>
     </section>
@@ -218,31 +253,29 @@
     <section id="contact" class="section contact-section">
       <div class="shell contact-layout">
         <div>
-          <p class="kicker">CONTACT</p>
-          <h2>Government problem owners, primes, airframe teams, research labs, and technical suppliers: talk to us early.</h2>
-          <p class="section-lead">We are especially interested in bounded engineering work, C5ISR/RF integration, technical data and sustainment support, prototype airframe collaboration, and technology partnerships that move a real system toward test.</p>
+          <p class="kicker">Contact</p>
+          <h2>Let's build something real.</h2>
+          <p class="section-lead">
+            We are open to early contract work, technical collaboration,
+            and serious discussions around PACN-01, FOVEA, and prototyping support.
+          </p>
         </div>
+
         <div class="contact-card">
-          <div class="contact-logo-stage"><img src="assets/peregrine-full-logo.png" alt="Peregrine Applied Sciences" class="contact-logo" /></div>
-          <dl class="contact-data">
-            <div><dt>EMAIL</dt><dd><a href="mailto:info@peregrineappliedsciences.com">info@peregrineappliedsciences.com</a></dd></div>
-            <div><dt>PHONE</dt><dd><a href="tel:+19152703223">(915) 270-3223</a></dd></div>
-            <div><dt>WEB</dt><dd><a href="https://peregrineappliedsciences.com">peregrineappliedsciences.com</a></dd></div>
-            <div><dt>LOCATION</dt><dd>El Paso, Texas</dd></div>
-          </dl>
+          <div class="contact-logo-stage">
+            <img src="assets/peregrine-full-logo.png" alt="Peregrine Applied Sciences logo" class="contact-logo" />
+          </div>
+          <p>Defense engineering • RF/C5ISR • autonomy • technical data</p>
+          <a href="https://peregrineappliedsciences.com">peregrineappliedsciences.com</a>
+          <a href="mailto:info@peregrineappliedsciences.com">info@peregrineappliedsciences.com</a>
+          <a href="tel:9152703223">(915) 270-3223</a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="shell footer-grid">
-      <span>© <span data-year></span> PEREGRINE APPLIED SCIENCES LLC</span>
-      <span>UEI XJT8AM2R4MT8 // CAGE 225F1</span>
-      <a href="capabilities.html">CAPABILITY STATEMENT</a>
-    </div>
-  </footer>
-
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
   <script src="script.js"></script>
 </body>
 </html>
