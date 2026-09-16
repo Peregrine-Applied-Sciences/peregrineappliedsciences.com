@@ -1,0 +1,154 @@
+%PDF-1.4
+% ASCII-only PDF
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 5 0 R /F2 6 0 R >> >> /Contents 4 0 R >>
+endobj
+4 0 obj
+<< /Length 9359 >>
+stream
+BT /F2 12 Tf 1 0 0 1 36.0 756.0 Tm (PEREGRINE APPLIED SCIENCES LLC) Tj ET
+BT /F2 18 Tf 1 0 0 1 318.0 756.0 Tm (CAPABILITY STATEMENT) Tj ET
+BT /F1 6.6 Tf 1 0 0 1 318.0 741.0 Tm (DEFENSE ENGINEERING | APPLIED R&D | C5ISR / RF / AUTONOMOUS SYSTEMS) Tj ET
+1.0 w 36.0 730.0 m 576.0 730.0 l S
+BT /F2 7 Tf 1 0 0 1 40.0 714.0 Tm (ENTITY REGISTRATION NOTICE) Tj ET
+BT /F1 6.7 Tf 1 0 0 1 40.0 702.0 Tm (Peregrine Applied Sciences LLC is the approved legal name of the same Texas LLC formerly named Anchorpoint) Tj ET
+BT /F1 6.7 Tf 1 0 0 1 40.0 694.0 Tm (Managed Technologies LLC. The SAM.gov legal-name update is pending; the active record may temporarily display) Tj ET
+BT /F1 6.7 Tf 1 0 0 1 40.0 686.0 Tm (the former name. UEI: XJT8AM2R4MT8   CAGE: 225F1.) Tj ET
+0.5 w 36.0 673.0 m 576.0 673.0 l S
+BT /F2 7 Tf 1 0 0 1 36.0 658.0 Tm (MISSION) Tj ET
+BT /F1 7 Tf 1 0 0 1 36.0 646.0 Tm (Peregrine Applied Sciences is a small defense engineering and applied research company built to turn technically difficult) Tj ET
+BT /F1 7 Tf 1 0 0 1 36.0 637.0 Tm (sensing, communications, autonomy, and aerospace problems into testable hardware and software. We combine depot-level RF) Tj ET
+BT /F1 7 Tf 1 0 0 1 36.0 628.0 Tm (experience, military avionics and systems engineering, advanced CAD/mechanical design, and modern AI/software development to) Tj ET
+BT /F1 7 Tf 1 0 0 1 36.0 619.0 Tm (support requirements through prototype, integration, verification, and transition.) Tj ET
+BT /F2 8 Tf 1 0 0 1 36.0 604.0 Tm (CORE ENGINEERING CAPABILITIES) Tj ET
+1 w 36.0 600.0 m 366.0 600.0 l S
+BT /F2 7 Tf 1 0 0 1 36.0 586.0 Tm (- Systems engineering:) Tj ET
+BT /F1 6.8 Tf 1 0 0 1 115.0 586.0 Tm (requirements decomposition, architecture, interface) Tj ET
+BT /F1 6.8 Tf 1 0 0 1 115.0 577.8 Tm (definition, trade studies, verification planning,) Tj ET
+BT /F1 6.8 Tf 1 0 0 1 115.0 569.6 Tm (configuration and technical data.) Tj ET
+BT /F2 7 Tf 1 0 0 1 36.0 559.4 Tm (- RF / communications:) Tj ET
+BT /F1 6.8 Tf 1 0 0 1 115.0 559.4 Tm (tactical RF, retransmission, antennas, link architecture,) Tj ET
+BT /F1 6.8 Tf 1 0 0 1 115.0 551.2 Tm (radar/RF payload integration, test and troubleshooting.) Tj ET
+BT /F2 7 Tf 1 0 0 1 36.0 541.0 Tm (- Electrical / avionics:) Tj ET
+BT /F1 6.8 Tf 1 0 0 1 115.0 541.0 Tm (airborne electronics, embedded systems, power) Tj ET
+BT /F1 6.8 Tf 1 0 0 1 115.0 532.8 Tm (architecture, harnessing, integration and instrumentation.) Tj ET
+BT /F2 7 Tf 1 0 0 1 36.0 522.6 Tm (- Mechanical / CAD:) Tj ET
+BT /F1 6.8 Tf 1 0 0 1 115.0 522.6 Tm (3D modeling, detailed drawings, mechanical packaging,) Tj ET
+BT /F1 6.8 Tf 1 0 0 1 115.0 514.4 Tm (structural concepts, producibility and technical) Tj ET
+BT /F1 6.8 Tf 1 0 0 1 115.0 506.2 Tm (documentation.) Tj ET
+BT /F2 7 Tf 1 0 0 1 36.0 496.0 Tm (- Software / algorithms:) Tj ET
+BT /F1 6.8 Tf 1 0 0 1 115.0 496.0 Tm (tracking, sensor fusion, autonomy support, AI/security) Tj ET
+BT /F1 6.8 Tf 1 0 0 1 115.0 487.8 Tm (research, simulation and deterministic data-processing) Tj ET
+BT /F1 6.8 Tf 1 0 0 1 115.0 479.6 Tm (pipelines.) Tj ET
+BT /F2 7 Tf 1 0 0 1 36.0 469.4 Tm (- Prototype / integration:) Tj ET
+BT /F1 6.8 Tf 1 0 0 1 115.0 469.4 Tm (rapid design-build-test cycles, bench integration,) Tj ET
+BT /F1 6.8 Tf 1 0 0 1 115.0 461.2 Tm (subsystem validation, root-cause analysis and engineering) Tj ET
+BT /F1 6.8 Tf 1 0 0 1 115.0 453.0 Tm (documentation.) Tj ET
+BT /F2 8 Tf 1 0 0 1 36.0 439.8 Tm (WHY PEREGRINE) Tj ET
+1 w 36.0 435.8 m 366.0 435.8 l S
+BT /F1 6.8 Tf 1 0 0 1 36.0 420.8 Tm (- Cross-domain team: RF sustainment + depot operations + avionics + mechanical design +) Tj ET
+BT /F1 6.8 Tf 1 0 0 1 36.0 412.6 Tm (software/AI in one small engineering organization.) Tj ET
+BT /F1 6.8 Tf 1 0 0 1 36.0 402.4 Tm (- Sustainment-informed design: technical decisions consider maintainability, repairability,) Tj ET
+BT /F1 6.8 Tf 1 0 0 1 36.0 394.2 Tm (documentation and lifecycle support - not only prototype performance.) Tj ET
+BT /F1 6.8 Tf 1 0 0 1 36.0 384.0 Tm (- Full-stack ownership: ability to move from first-principles modeling into CAD, electronics,) Tj ET
+BT /F1 6.8 Tf 1 0 0 1 36.0 375.8 Tm (software, integration and test without excessive handoffs.) Tj ET
+BT /F1 6.8 Tf 1 0 0 1 36.0 365.6 Tm (- Rapid technical iteration: small-team execution with direct access to senior technical leads) Tj ET
+BT /F1 6.8 Tf 1 0 0 1 36.0 357.4 Tm (and short decision loops.) Tj ET
+BT /F2 8 Tf 1 0 0 1 36.0 344.2 Tm (REPRESENTATIVE DEVELOPMENT AREAS) Tj ET
+1 w 36.0 340.2 m 366.0 340.2 l S
+BT /F1 6.8 Tf 1 0 0 1 36.0 325.2 Tm (Distributed sensing and tracking | RF/radar payloads | tactical communications | airborne edge) Tj ET
+BT /F1 6.8 Tf 1 0 0 1 36.0 317.0 Tm (processing | unmanned aircraft | resilient data links | test automation | sustainment) Tj ET
+BT /F1 6.8 Tf 1 0 0 1 36.0 308.8 Tm (engineering | technical data packages) Tj ET
+BT /F2 8 Tf 1 0 0 1 384.0 604.0 Tm (COMPANY DATA) Tj ET
+1 w 384.0 600.0 m 576.0 600.0 l S
+BT /F2 6.5 Tf 1 0 0 1 384.0 586.0 Tm (Legal name) Tj ET
+BT /F1 6.3 Tf 1 0 0 1 451.0 586.0 Tm (Peregrine Applied Sciences LLC) Tj ET
+0.25 w 384.0 582.0 m 576.0 582.0 l S
+BT /F2 6.5 Tf 1 0 0 1 384.0 570.0 Tm (Location) Tj ET
+BT /F1 6.3 Tf 1 0 0 1 451.0 570.0 Tm (El Paso, Texas) Tj ET
+0.25 w 384.0 566.0 m 576.0 566.0 l S
+BT /F2 6.5 Tf 1 0 0 1 384.0 554.0 Tm (UEI) Tj ET
+BT /F1 6.3 Tf 1 0 0 1 451.0 554.0 Tm (XJT8AM2R4MT8) Tj ET
+0.25 w 384.0 550.0 m 576.0 550.0 l S
+BT /F2 6.5 Tf 1 0 0 1 384.0 538.0 Tm (CAGE) Tj ET
+BT /F1 6.3 Tf 1 0 0 1 451.0 538.0 Tm (225F1) Tj ET
+0.25 w 384.0 534.0 m 576.0 534.0 l S
+BT /F2 6.5 Tf 1 0 0 1 384.0 522.0 Tm (Primary NAICS) Tj ET
+BT /F1 6.3 Tf 1 0 0 1 451.0 522.0 Tm (541330 - Engineering Services) Tj ET
+0.25 w 384.0 518.0 m 576.0 518.0 l S
+BT /F2 6.5 Tf 1 0 0 1 384.0 506.0 Tm (Secondary NAICS) Tj ET
+BT /F1 6.3 Tf 1 0 0 1 451.0 506.0 Tm (541715 - Engineering R&D) Tj ET
+0.25 w 384.0 502.0 m 576.0 502.0 l S
+BT /F2 6.5 Tf 1 0 0 1 384.0 490.0 Tm (Website) Tj ET
+BT /F1 6.3 Tf 1 0 0 1 451.0 490.0 Tm (peregrineappliedsciences.com) Tj ET
+0.25 w 384.0 486.0 m 576.0 486.0 l S
+BT /F2 6.5 Tf 1 0 0 1 384.0 474.0 Tm (Email) Tj ET
+BT /F1 6.3 Tf 1 0 0 1 451.0 474.0 Tm (info@peregrineappliedsciences.com) Tj ET
+0.25 w 384.0 470.0 m 576.0 470.0 l S
+BT /F2 6.5 Tf 1 0 0 1 384.0 458.0 Tm (Phone) Tj ET
+BT /F1 6.3 Tf 1 0 0 1 451.0 458.0 Tm (\(915\) 270-3223) Tj ET
+0.25 w 384.0 454.0 m 576.0 454.0 l S
+BT /F2 8 Tf 1 0 0 1 384.0 438.0 Tm (KEY PERSONNEL) Tj ET
+1 w 384.0 434.0 m 576.0 434.0 l S
+BT /F2 6.5 Tf 1 0 0 1 384.0 419.0 Tm (Austin Howard - Founder / Managing Member) Tj ET
+BT /F1 6.1 Tf 1 0 0 1 384.0 410.0 Tm (Former USAF F-16 avionics technician and systems) Tj ET
+BT /F1 6.1 Tf 1 0 0 1 384.0 402.6 Tm (engineer; currently pursuing a B.S. in Electrical) Tj ET
+BT /F1 6.1 Tf 1 0 0 1 384.0 395.2 Tm (Engineering at Arizona State University.) Tj ET
+BT /F1 6.1 Tf 1 0 0 1 384.0 387.8 Tm (Experience includes systems architecture, CAD,) Tj ET
+BT /F1 6.1 Tf 1 0 0 1 384.0 380.4 Tm (integration, technical documentation, and) Tj ET
+BT /F1 6.1 Tf 1 0 0 1 384.0 373.0 Tm (AI/security research including InjectLab.) Tj ET
+BT /F2 6.5 Tf 1 0 0 1 384.0 358.6 Tm (Raul Negrao - Chief of RF Engineering) Tj ET
+BT /F1 6.1 Tf 1 0 0 1 384.0 349.6 Tm (20 years of Army RF, retransmission, sustainment) Tj ET
+BT /F1 6.1 Tf 1 0 0 1 384.0 342.2 Tm (and depot-level experience across a broad range of) Tj ET
+BT /F1 6.1 Tf 1 0 0 1 384.0 334.8 Tm (tactical communications systems. Leads RF) Tj ET
+BT /F1 6.1 Tf 1 0 0 1 384.0 327.4 Tm (architecture, integration, test, troubleshooting) Tj ET
+BT /F1 6.1 Tf 1 0 0 1 384.0 320.0 Tm (and sustainment-informed design.) Tj ET
+BT /F2 6.5 Tf 1 0 0 1 384.0 305.6 Tm (Jose Escobedo - Co-Founder / Mechanical Design Lead) Tj ET
+BT /F1 6.1 Tf 1 0 0 1 384.0 296.6 Tm (30 years of CAD modeling, drafting and drawing-) Tj ET
+BT /F1 6.1 Tf 1 0 0 1 384.0 289.2 Tm (package experience. Leads mechanical design,) Tj ET
+BT /F1 6.1 Tf 1 0 0 1 384.0 281.8 Tm (detailed technical drawings, packaging,) Tj ET
+BT /F1 6.1 Tf 1 0 0 1 384.0 274.4 Tm (producibility support and configuration-controlled) Tj ET
+BT /F1 6.1 Tf 1 0 0 1 384.0 267.0 Tm (design documentation.) Tj ET
+BT /F2 8 Tf 1 0 0 1 384.0 252.6 Tm (MISSION ALIGNMENT) Tj ET
+1 w 384.0 248.6 m 576.0 248.6 l S
+BT /F1 6.2 Tf 1 0 0 1 384.0 233.6 Tm (Relevant to organizations responsible for C5ISR) Tj ET
+BT /F1 6.2 Tf 1 0 0 1 384.0 226.1 Tm (readiness, communications-electronics engineering,) Tj ET
+BT /F1 6.2 Tf 1 0 0 1 384.0 218.6 Tm (depot sustainment, radar/RF systems, UAS) Tj ET
+BT /F1 6.2 Tf 1 0 0 1 384.0 211.1 Tm (integration, avionics, rapid prototyping,) Tj ET
+BT /F1 6.2 Tf 1 0 0 1 384.0 203.6 Tm (technical data development and field support.) Tj ET
+BT /F1 6.2 Tf 1 0 0 1 384.0 189.1 Tm (Engagement objective: partner with government) Tj ET
+BT /F1 6.2 Tf 1 0 0 1 384.0 181.6 Tm (problem owners and prime/depot organizations where) Tj ET
+BT /F1 6.2 Tf 1 0 0 1 384.0 174.1 Tm (a small, multidisciplinary engineering team can) Tj ET
+BT /F1 6.2 Tf 1 0 0 1 384.0 166.6 Tm (reduce technical risk, accelerate prototyping, or) Tj ET
+BT /F1 6.2 Tf 1 0 0 1 384.0 159.1 Tm (close documentation / integration gaps.) Tj ET
+0.5 w 36.0 28.0 m 576.0 28.0 l S
+BT /F1 6 Tf 1 0 0 1 36.0 16.0 Tm (PEREGRINE APPLIED SCIENCES LLC | CAPABILITY STATEMENT) Tj ET
+BT /F1 6 Tf 1 0 0 1 465.0 16.0 Tm (UEI XJT8AM2R4MT8) Tj ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000026 00000 n 
+0000000075 00000 n 
+0000000132 00000 n 
+0000000268 00000 n 
+0000009678 00000 n 
+0000009748 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+9823
+%%EOF
