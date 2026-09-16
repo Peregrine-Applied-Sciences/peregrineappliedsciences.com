@@ -3,179 +3,205 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="PACN-01 is Peregrine Applied Sciences' evolving airborne edge-node architecture for RF communications, sensing, cooperative tracking, mission computing, and FOVEA software integration." />
+  <meta name="description" content="PACN-01 is Peregrine Applied Sciences' airborne edge-node architecture for communications, mission compute, and distributed sensing workflows." />
   <meta name="theme-color" content="#0b0e14" />
-  <title>PACN-01 + FOVEA | Peregrine Applied Sciences</title>
+  <title>PACN-01 | Peregrine Applied Sciences</title>
   <link rel="icon" href="favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180x180.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body data-page="pacn">
   <div class="grid-overlay" aria-hidden="true"></div>
+
   <header class="site-header">
     <a class="brand" href="index.html" aria-label="Peregrine Applied Sciences home">
-      <picture class="brand-picture"><source media="(max-width: 650px)" srcset="assets/peregrine-symbol.png" /><img src="assets/peregrine-header-logo.png" alt="Peregrine Applied Sciences" class="brand-logo" /></picture>
+      <picture class="brand-picture">
+        <source media="(max-width: 650px)" srcset="assets/peregrine-symbol.png" />
+        <img src="assets/peregrine-header-logo.png" alt="Peregrine Applied Sciences" class="brand-logo" />
+      </picture>
     </a>
-    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">MENU</button>
+    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">Menu</button>
     <nav class="site-nav" aria-label="Primary">
-      <a href="index.html#company" data-nav="home">COMPANY</a>
-      <a href="index.html#programs">PROGRAMS</a>
-      <a href="capabilities.html" data-nav="capabilities">CAPABILITIES</a>
+      <a href="index.html#company" data-nav="home">Company</a>
+      <a href="index.html#programs">Programs</a>
+      <a href="capabilities.html" data-nav="capabilities">Capabilities</a>
       <a href="pacn-01.html" data-nav="pacn">PACN-01</a>
-      <a href="stage.html" data-nav="stage">CURRENT STAGE</a>
-      <a href="index.html#contact" class="nav-cta">CONTACT</a>
+      <a href="stage.html" data-nav="stage">Current stage</a>
+      <a href="index.html#contact" class="nav-cta">Contact</a>
     </nav>
   </header>
 
   <main>
     <section class="page-hero">
       <div class="shell">
-        <div class="breadcrumb"><a href="index.html">HOME</a><span>/</span><span>PACN-01</span></div>
-        <p class="eyebrow">PACN-01 // FOVEA ENGINE // PEREGRINE MISSION CONSOLE</p>
-        <h1>From airborne relay concept to distributed mission node.</h1>
-        <p class="hero-copy">PACN-01 has evolved into a modular airborne edge-node architecture intended to combine communications, sensing interfaces, cooperative tracking, mission compute, and operator decision support. FOVEA is the software layer being built to make those pieces operate as one mission system.</p>
-        <div class="stage-badge"><i class="pulse-dot"></i> ACTIVE ENGINEERING DEVELOPMENT</div>
-      </div>
-    </section>
-
-    <section class="section section-dark">
-      <div class="shell">
-        <div class="section-head split-head">
-          <div>
-            <p class="kicker">SYSTEM EVOLUTION</p>
-            <h2>The architecture changed as the mission problem became clearer.</h2>
-          </div>
-          <p class="section-lead">The original PACN-01 concept centered on restoring or extending RF connectivity from an airborne node. Current development keeps that function, but treats communications as one service inside a broader mission architecture rather than the entire product.</p>
-        </div>
-
-        <div class="evolution-grid">
-          <article class="evolution-card"><span>ORIGINAL CONCEPT</span><h3>Airborne RF relay.</h3><p>Extend line-of-sight, bridge terrain, restore temporary communications, and place a useful RF node above infrastructure-limited areas.</p></article>
-          <article class="evolution-card current"><span>CURRENT ARCHITECTURE</span><h3>Airborne edge mission node.</h3><p>Configurable RF interfaces, sensing/radar integration points, network topology, cooperative track exchange, local mission compute, and FOVEA services.</p></article>
-          <article class="evolution-card"><span>NEXT INTEGRATION STEP</span><h3>Representative hardware + surrogate airframe.</h3><p>Move software and interfaces onto representative compute, radios, sensors, and a mature flight platform before committing to a purpose-built airframe.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-dark" id="architecture">
-      <div class="shell">
-        <div class="section-head">
-          <p class="kicker">PUBLIC ARCHITECTURE VIEW</p>
-          <h2>Sense. Communicate. Fuse. Decide. Exchange.</h2>
-          <p class="section-lead">The public architecture intentionally stays at the functional level. Mission-specific RF, sensor, waveform, and implementation details are configuration-dependent and are not represented here as fixed specifications.</p>
-        </div>
-
-        <div class="architecture" aria-label="PACN-01 high-level architecture">
-          <article class="arch-block">
-            <span>INPUTS / INTERFACES</span>
-            <h3>Radios, sensors, radar, platform state.</h3>
-            <ul>
-              <li>Configurable RF / network interfaces</li>
-              <li>Radar and sensor data inputs</li>
-              <li>Air vehicle state and navigation data</li>
-              <li>Peer-node / cooperative-source data</li>
-            </ul>
-          </article>
-          <div class="arch-linker" aria-hidden="true">→</div>
-          <article class="arch-block primary">
-            <span>MISSION SOFTWARE</span>
-            <h3>FOVEA Engine.</h3>
-            <ul>
-              <li>Tracking and track management</li>
-              <li>Cooperative source association / fusion</li>
-              <li>Mission state and opportunity evaluation</li>
-              <li>Radar tasking / scheduling adapter</li>
-              <li>Simulation, telemetry, replay, provenance</li>
-            </ul>
-          </article>
-          <div class="arch-linker" aria-hidden="true">→</div>
-          <article class="arch-block">
-            <span>MISSION OUTPUTS</span>
-            <h3>Operator, network, and platform services.</h3>
-            <ul>
-              <li>Peregrine Mission Console</li>
-              <li>Cooperative tracks / source context</li>
-              <li>Network and node-state awareness</li>
-              <li>Mission actions and engineering telemetry</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="fovea" class="section">
-      <div class="shell">
-        <div class="section-head split-head">
-          <div>
-            <p class="kicker">FOVEA ENGINE + PEREGRINE MISSION CONSOLE</p>
-            <h2>Software is already beyond a slide-deck concept.</h2>
-          </div>
-          <p class="section-lead">The current FOVEA software baseline is an engineering MVP. It packages native mission/simulation logic with a ground-station backend and the Peregrine Mission Console operator interface for Windows and Linux engineering use.</p>
-        </div>
-
-        <table class="feature-table">
-          <thead><tr><th>AREA</th><th>IMPLEMENTED ENGINEERING-MVP FUNCTION</th><th>CURRENT POSTURE</th></tr></thead>
-          <tbody>
-            <tr><td>Mission construction</td><td>Scenario builder/editor, mission objectives, event timeline editing, mission package controls.</td><td>Implemented; continuing debug and usability hardening.</td></tr>
-            <tr><td>Tracks / sensing</td><td>Radar/FOV visualization, track selection and inspection, cooperative track/source visualization.</td><td>Implemented in the MVP simulation / ground-station workflow.</td></tr>
-            <tr><td>Network view</td><td>PACN node and network-topology visualization with cooperative-source context.</td><td>Implemented at the engineering-console level.</td></tr>
-            <tr><td>Replay / evidence</td><td>Recorded run replay, telemetry, mission-state artifacts, and decision-provenance presentation.</td><td>Implemented; qualification coverage is being expanded.</td></tr>
-            <tr><td>Geographic operations</td><td>Geographic operations mode plus offline map / mission-package import-export controls.</td><td>Implemented in the current console feature set.</td></tr>
-            <tr><td>Packaging</td><td>Single-file Windows and Linux desktop packages with self-test and per-session run artifacts.</td><td>Engineering MVP packaging complete; not a fielded product release.</td></tr>
-          </tbody>
-        </table>
-
-        <div class="callout" style="margin-top:24px"><strong>Important distinction:</strong> a packaged engineering MVP is not the same thing as operational qualification. Peregrine is currently focused on defect closure, integration boundaries, repeatable test evidence, and representative hardware interfaces before any field-performance claims are made.</div>
-      </div>
-    </section>
-
-    <section class="visual-section">
-      <img src="assets/field-uav.png" alt="Representative unmanned-aircraft field development imagery" />
-      <div class="visual-overlay" aria-hidden="true"></div>
-      <div class="shell visual-copy">
-        <p class="kicker">HARDWARE TRANSITION</p>
-        <h2>The fastest path to a credible flight demo is not to invent every subsystem at once.</h2>
-      </div>
-    </section>
-
-    <section class="section section-dark">
-      <div class="shell">
-        <div class="section-head split-head">
-          <div>
-            <p class="kicker">HARDWARE POSTURE</p>
-            <h2>Integrate on a mature platform first. Purpose-build later.</h2>
-          </div>
-          <p class="section-lead">Peregrine is looking for a prototyping / airframe partner that can support a representative airborne integration path. The immediate objective is to retire software, RF, payload, power, thermal, and flight-interface risk without making the first flight article carry the burden of validating an entirely new air vehicle.</p>
-        </div>
-
-        <div class="partner-grid">
-          <article class="partner-card"><span>AIRFRAME / UAS PARTNER</span><h3>Mature surrogate platform.</h3><p>Payload volume and mass, power, mounting, flight integration, operating approvals, flight-test support, and a path to repeated engineering sorties.</p></article>
-          <article class="partner-card"><span>RF / SENSOR PARTNER</span><h3>Representative mission hardware.</h3><p>Radios, antennas, sensors, radar interfaces, embedded compute, time/position sources, and instrumentation suitable for integration and test.</p></article>
-          <article class="partner-card"><span>GOVERNMENT / PRIME PARTNER</span><h3>Real problem and evaluation context.</h3><p>Representative mission threads, system constraints, interfaces, success criteria, test venues, and scoped engineering work that creates useful evidence.</p></article>
-          <article class="partner-card"><span>RESEARCH / TEST PARTNER</span><h3>Independent technical depth.</h3><p>RF propagation, radar, autonomy, controls, aero/structures, HIL/SIL, modeling, instrumentation, and independent validation support.</p></article>
-        </div>
-
-        <div class="hero-actions"><a class="button primary" href="stage.html#airframe">SEE EXACT PARTNER NEEDS</a><a class="button ghost" href="mailto:info@peregrineappliedsciences.com?subject=PACN-01%20Partner%20Discussion">CONTACT PEREGRINE</a></div>
+        <p class="eyebrow">PACN-01</p>
+        <h1>Airborne edge node.</h1>
+        <p class="page-lead">
+          PACN-01 is Peregrine's airborne architecture for communications,
+          mission compute, track services, and distributed sensing workflows.
+        </p>
       </div>
     </section>
 
     <section class="section">
-      <div class="shell status-layout">
-        <div>
-          <p class="kicker">P-360 RELATIONSHIP</p>
-          <h2>P-360 is the later purpose-built aircraft path, not a prerequisite for early PACN-01 validation.</h2>
+      <div class="shell">
+        <div class="section-head split-head">
+          <div>
+            <p class="kicker">Program snapshot</p>
+            <h2>Designed as a modular system.</h2>
+          </div>
+          <p class="section-lead">
+            Public descriptions here are representative only and avoid sensitive implementation details.
+          </p>
         </div>
-        <div>
-          <p class="section-lead">P-360 Stoop is a design-stage Group 3 VTOL aircraft concept intended to support persistent sensing and communications payloads in later development phases. Peregrine's near-term integration strategy is to use a mature surrogate airframe where practical, learn from flight-relevant integration, and feed those constraints back into P-360 rather than waiting for a bespoke aircraft before validating the mission system.</p>
-          <div class="callout" style="margin-top:20px"><strong>Design-status note:</strong> P-360 performance values are engineering objectives until validated by prototype hardware and flight test.</div>
+        <div class="info-grid two-up">
+          <article class="info-card">
+            <span class="card-kicker">Mission role</span>
+            <h3>Networked airborne support</h3>
+            <p>
+              PACN-01 is intended to support resilient communications,
+              operator awareness, mission-level decision support,
+              and distributed sensing or track-sharing workflows.
+            </p>
+          </article>
+          <article class="info-card">
+            <span class="card-kicker">System model</span>
+            <h3>Payload-agnostic architecture</h3>
+            <p>
+              The architecture is structured to host compute, RF modules,
+              software services, and mission-specific payload functions
+              without locking Peregrine to a single narrow mission set.
+            </p>
+          </article>
+          <article class="info-card">
+            <span class="card-kicker">Integration state</span>
+            <h3>Engineering and prototype phase</h3>
+            <p>
+              PACN-01 is in design and maturation. Hardware integration,
+              airframe pairing, and prototype execution remain active next steps.
+            </p>
+          </article>
+          <article class="info-card" id="software">
+            <span class="card-kicker">Software stack</span>
+            <h3>Powered by FOVEA</h3>
+            <p>
+              FOVEA Engine and Peregrine Mission Console provide the software path for scenario building,
+              simulation, decision logic, tracking, cooperative fusion, and operator workflows.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark">
+      <div class="shell">
+        <div class="section-head split-head">
+          <div>
+            <p class="kicker">FOVEA and PMC</p>
+            <h2>Mission software with operator context.</h2>
+          </div>
+          <p class="section-lead">
+            Current public status reflects an engineering MVP, not a fielded or flight-qualified product.
+          </p>
+        </div>
+        <div class="feature-grid">
+          <div class="feature-card">
+            <h3>Implemented now</h3>
+            <ul>
+              <li>Scenario builder and editor</li>
+              <li>Mission timeline editing</li>
+              <li>Radar / field-of-view visualization</li>
+              <li>Track inspection and replay</li>
+              <li>Node topology and cooperative-fusion views</li>
+              <li>Decision provenance and offline map support</li>
+            </ul>
+          </div>
+          <div class="feature-card">
+            <h3>Value to operators and teams</h3>
+            <ul>
+              <li>Faster concept iteration</li>
+              <li>Clearer mission logic</li>
+              <li>Stronger integration discipline</li>
+              <li>Better traceability from scenario to outcome</li>
+              <li>Reduced ambiguity during prototype development</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section media-section">
+      <div class="shell">
+        <div class="section-head split-head">
+          <div>
+            <p class="kicker">Mission console</p>
+            <h2>Operator-facing engineering software.</h2>
+          </div>
+          <p class="section-lead">
+            The current Peregrine Mission Console provides a desktop engineering environment for FOVEA scenario construction, tracking, replay, cooperative fusion, and mission-level decision review.
+          </p>
+        </div>
+        <figure class="media-card media-card-wide">
+          <img src="assets/mission-console.webp" alt="Peregrine Mission Console interface" loading="lazy" />
+          <figcaption>Peregrine Mission Console engineering MVP.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell">
+        <div class="section-head split-head">
+          <div>
+            <p class="kicker">Representative analysis</p>
+            <h2>Engineering drives the design.</h2>
+          </div>
+          <p class="section-lead">
+            Peregrine uses analysis and simulation to shape architecture decisions before committing to expensive hardware paths.
+          </p>
+        </div>
+
+        <div class="analysis-gallery">
+          <figure class="media-card">
+            <img src="assets/radar-overlap.webp" alt="P-360R node coverage intersection heatmaps" loading="lazy" />
+            <figcaption>Representative multi-node coverage and overlap analysis.</figcaption>
+          </figure>
+          <figure class="media-card">
+            <img src="assets/radar-horizon.webp" alt="Radar horizon versus platform altitude analysis" loading="lazy" />
+            <figcaption>Representative altitude and line-of-sight trade analysis.</figcaption>
+          </figure>
+        </div>
+
+        <div class="program-grid">
+          <article class="program-card">
+            <span class="card-label">Coverage</span>
+            <h3>Node overlap studies</h3>
+            <p>
+              Coverage and geometry studies help bound where multi-node architectures provide the best operational value.
+            </p>
+          </article>
+          <article class="program-card">
+            <span class="card-label">Range</span>
+            <h3>Horizon and geometry trades</h3>
+            <p>
+              Platform altitude, geometry, and environment assumptions are evaluated early to guide payload and concept decisions.
+            </p>
+          </article>
+          <article class="program-card">
+            <span class="card-label">Workflow</span>
+            <h3>Simulation-first development</h3>
+            <p>
+              Modeling and software validation provide an affordable path to refine the concept before full prototype integration.
+            </p>
+          </article>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer"><div class="shell footer-grid"><span>© <span data-year></span> PEREGRINE APPLIED SCIENCES LLC</span><span>UEI XJT8AM2R4MT8 // CAGE 225F1</span><a href="capabilities.html">CAPABILITY STATEMENT</a></div></footer>
   <script src="script.js"></script>
 </body>
 </html>
