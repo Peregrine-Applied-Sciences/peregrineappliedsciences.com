@@ -3,279 +3,342 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Peregrine Applied Sciences is a defense engineering and applied R&D company focused on RF/C5ISR, autonomy, aerospace systems, software, integration, and technical data." />
-  <meta name="theme-color" content="#0b0e14" />
-  <title>Peregrine Applied Sciences | Defense Engineering & Applied R&D</title>
+  <meta name="description" content="Peregrine Applied Sciences builds distributed sensing, mission software, RF systems, and autonomous mission-node architectures for defense and dual-use operations." />
+  <meta name="theme-color" content="#202427" />
+  <title>Peregrine Applied Sciences | Distributed Sensing & Mission Systems</title>
   <link rel="icon" href="favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180x180.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body data-page="home">
-  <div class="grid-overlay" aria-hidden="true"></div>
-
   <header class="site-header">
     <a class="brand" href="index.html" aria-label="Peregrine Applied Sciences home">
-      <picture class="brand-picture">
-        <source media="(max-width: 650px)" srcset="assets/peregrine-symbol.png" />
-        <img src="assets/peregrine-header-logo.png" alt="Peregrine Applied Sciences" class="brand-logo" />
-      </picture>
+      <img src="assets/peregrine-header-logo.png" alt="Peregrine Applied Sciences" class="brand-logo" />
     </a>
-    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">Menu</button>
+
+    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+
     <nav class="site-nav" aria-label="Primary">
-      <a href="index.html#company" data-nav="home">Company</a>
-      <a href="index.html#programs">Programs</a>
+      <a href="#systems">Technology</a>
+      <a href="#missions">Mission Areas</a>
       <a href="capabilities.html" data-nav="capabilities">Capabilities</a>
-      <a href="pacn-01.html" data-nav="pacn">PACN-01</a>
-      <a href="stage.html" data-nav="stage">Current stage</a>
-      <a href="index.html#contact" class="nav-cta">Contact</a>
+      <a href="#company">Company</a>
+      <a class="nav-cta" href="#contact">Start a conversation</a>
     </nav>
   </header>
 
-  <main id="top">
-    <section class="hero hero-globe">
-      <div class="hero-globe-stage" aria-hidden="true">
-        <canvas id="heroGlobeCanvas"></canvas>
-      </div>
-      <div class="hero-shade"></div>
-      <div class="shell hero-layout">
-        <div class="hero-copywrap">
-          <p class="eyebrow">Defense engineering • Applied R&amp;D</p>
-          <h1>Engineering for difficult environments.</h1>
+  <main>
+    <section class="hero hero-routing" id="top">
+      <canvas id="routingCanvas" aria-hidden="true"></canvas>
+      <div class="hero-noise" aria-hidden="true"></div>
+
+      <div class="hero-shell">
+        <div class="hero-copywrap reveal">
+          <p class="eyebrow">Peregrine Applied Sciences / El Paso, Texas</p>
+          <h1>Make every sensor a cooperative node.</h1>
           <p class="hero-copy">
-            Peregrine Applied Sciences develops RF/C5ISR, autonomy, aerospace,
-            and systems-engineering solutions for government and defense programs.
-          </p>
-          <p class="hero-copy hero-copy-secondary">
-            Current focus: first-pass engineering contracts, FOVEA software maturation,
-            and partner integration for PACN-01 and P-360.
+            We build the sensing hardware, edge software, and mission architecture that let
+            separate sensors, platforms, and networks operate as one coordinated system.
           </p>
           <div class="hero-actions">
-            <a class="button primary" href="capabilities.html">View capabilities</a>
-            <a class="button ghost" href="pacn-01.html">Explore PACN-01</a>
+            <a class="text-link strong" href="#systems">Explore the system <span>↗</span></a>
+            <a class="text-link" href="capabilities.html">Engineering capabilities <span>↗</span></a>
           </div>
-          <div class="hero-status-strip">
-            <span>UEI: XJT8AM2R4MT8</span>
-            <span>CAGE: 225F1</span>
-            <span>NAICS: 541330 • 541715</span>
-          </div>
-          <p class="hero-note">
-            Interactive globe shows a representative PACN node, notional tracks,
-            and visitor geolocation when browser permission is available.
+        </div>
+
+        <div class="hero-rail" aria-label="Peregrine system components">
+          <span>FOVEA</span>
+          <span>P-360</span>
+          <span>PACN</span>
+          <span>MISSION NODES</span>
+        </div>
+      </div>
+
+      <div class="hero-meta">
+        <div><span>01</span> Distributed sensing</div>
+        <div><span>02</span> Edge mission software</div>
+        <div><span>03</span> Cross-domain coordination</div>
+      </div>
+    </section>
+
+    <section class="section statement-section">
+      <div class="shell split-statement reveal">
+        <p class="section-index">01 / System</p>
+        <div>
+          <h2>One mission architecture across air, ground, sensors, and networks.</h2>
+          <p class="large-copy">
+            Peregrine is built around a simple premise: the value is not another isolated platform.
+            The value is a force of heterogeneous systems that can discover, share, fuse, and coordinate.
           </p>
         </div>
       </div>
     </section>
 
-    <section id="company" class="section">
+    <section id="systems" class="section system-section">
       <div class="shell">
-        <div class="section-head split-head">
-          <div>
-            <p class="kicker">Company</p>
-            <h2>Built to solve integration problems.</h2>
+        <div class="section-intro reveal">
+          <p class="kicker">The Peregrine System</p>
+          <h2>Hardware where physics matters.<br />Software where coordination matters.</h2>
+        </div>
+
+        <div class="system-stack">
+          <a class="system-row reveal" href="pacn-01.html#software" data-route-focus="fovea">
+            <div class="system-number">01</div>
+            <div class="system-name">FOVEA</div>
+            <div class="system-description">Mission + edge backbone</div>
+            <div class="system-detail">Fusion / provenance / tasking / distributed state</div>
+            <div class="system-arrow">↗</div>
+          </a>
+
+          <div class="system-row reveal" data-route-focus="p360">
+            <div class="system-number">02</div>
+            <div class="system-name">P-360</div>
+            <div class="system-description">Flagship sensing hardware</div>
+            <div class="system-detail">Radar / RF / edge compute / modular sensing</div>
+            <div class="system-arrow">→</div>
           </div>
-          <p class="section-lead">
-            Peregrine sits at the intersection of RF, software, systems engineering,
-            avionics, modeling, and technical data.
-          </p>
-        </div>
 
-        <div class="info-grid three-up">
-          <article class="info-card">
-            <span class="card-kicker">01</span>
-            <h3>RF and C5ISR</h3>
-            <p>
-              RF architecture, tactical networking, sensing support,
-              communications engineering, and integration analysis.
-            </p>
-          </article>
-          <article class="info-card">
-            <span class="card-kicker">02</span>
-            <h3>Software and autonomy</h3>
-            <p>
-              Mission logic, decision support, operator workflows,
-              simulation tooling, and distributed-systems software.
-            </p>
-          </article>
-          <article class="info-card">
-            <span class="card-kicker">03</span>
-            <h3>Prototype and test</h3>
-            <p>
-              CAD, drawing support, lab integration, instrumentation,
-              verification planning, and technical reporting.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
+          <a class="system-row reveal" href="pacn-01.html" data-route-focus="pacn">
+            <div class="system-number">03</div>
+            <div class="system-name">PACN</div>
+            <div class="system-description">Airborne mission nodes</div>
+            <div class="system-detail">Sensing / relay / reconnaissance / networking</div>
+            <div class="system-arrow">↗</div>
+          </a>
 
-    <section id="programs" class="section section-dark">
-      <div class="shell">
-        <div class="section-head">
-          <p class="kicker">Programs</p>
-          <h2>Three lines of effort.</h2>
-          <p class="section-lead">
-            Public program descriptions below are intentionally high level and non-sensitive.
-          </p>
-        </div>
-
-        <div class="program-grid">
-          <article class="program-card">
-            <span class="card-label">PACN-01</span>
-            <h3>Airborne edge node</h3>
-            <p>
-              A modular airborne node for communications, mission compute,
-              track services, and distributed sensing workflows.
-            </p>
-            <a href="pacn-01.html">Program details</a>
-          </article>
-          <article class="program-card">
-            <span class="card-label">FOVEA</span>
-            <h3>Mission software</h3>
-            <p>
-              FOVEA Engine and Peregrine Mission Console support simulation,
-              cooperative fusion, decision provenance, and operator workflows.
-            </p>
-            <a href="pacn-01.html#software">Software overview</a>
-          </article>
-          <article class="program-card">
-            <span class="card-label">P-360</span>
-            <h3>Future airframe path</h3>
-            <p>
-              A longer-term purpose-built aircraft concept intended to host advanced payloads,
-              autonomy, and persistent mission services.
-            </p>
-            <a href="stage.html#next">What comes next</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section media-section">
-      <div class="shell">
-        <div class="section-head split-head">
-          <div>
-            <p class="kicker">Peregrine Mission Console</p>
-            <h2>Mission software you can see.</h2>
+          <div class="system-row reveal" data-route-focus="nodes">
+            <div class="system-number">04</div>
+            <div class="system-name">Mission Nodes</div>
+            <div class="system-description">Ground + maritime + logistics</div>
+            <div class="system-detail">Partner mobility platforms unified through FOVEA</div>
+            <div class="system-arrow">→</div>
           </div>
-          <p class="section-lead">
-            FOVEA and Peregrine Mission Console are already producing usable operator workflows for scenario design, tracking, replay, network topology, and decision traceability.
-          </p>
         </div>
-        <figure class="media-card media-card-wide">
-          <img src="assets/mission-console.webp" alt="Peregrine Mission Console simulation interface" loading="lazy" />
-          <figcaption>Current engineering interface for FOVEA / PACN-01 simulation and mission analysis.</figcaption>
-        </figure>
       </div>
     </section>
 
-    <section class="section">
-      <div class="shell">
-        <div class="section-head split-head">
-          <div>
-            <p class="kicker">What we need now</p>
-            <h2>Partners that help us move faster.</h2>
+    <section class="section mission-architecture">
+      <div class="shell architecture-grid">
+        <div class="architecture-copy reveal">
+          <p class="kicker">Mission architecture</p>
+          <h2>From sensor data to coordinated action.</h2>
+          <p>
+            FOVEA turns heterogeneous sensor and platform data into a common mission picture,
+            preserves provenance, and gives operators one place to understand what the network
+            knows, which assets are available, and where attention should move next.
+          </p>
+
+          <div class="architecture-steps">
+            <div><span>01</span><strong>Sense</strong><p>Radar, RF, electro-optical, vehicle and third-party data.</p></div>
+            <div><span>02</span><strong>Normalize</strong><p>Translate dissimilar feeds into common mission objects.</p></div>
+            <div><span>03</span><strong>Fuse</strong><p>Correlate observations, tracks, health, timing and provenance.</p></div>
+            <div><span>04</span><strong>Coordinate</strong><p>Share relevant state and task available mission nodes.</p></div>
           </div>
-          <p class="section-lead">
-            Peregrine is ready for small, bounded engineering work while maturing
-            the first demonstrable PACN-01 / FOVEA prototype path.
-          </p>
         </div>
-        <div class="info-grid three-up">
-          <article class="info-card">
-            <span class="card-kicker">A</span>
-            <h3>Initial contract work</h3>
-            <p>Subsystem engineering, integration support, technical studies, test support, and drawing-package development.</p>
+
+        <div class="architecture-visual reveal" aria-label="Representative distributed mission architecture">
+          <svg viewBox="0 0 820 650" role="img" aria-labelledby="architectureTitle">
+            <title id="architectureTitle">Representative Peregrine distributed mission architecture</title>
+            <defs>
+              <linearGradient id="routeFade" x1="0" x2="1">
+                <stop offset="0" stop-color="#dfe2e3" stop-opacity=".08"/>
+                <stop offset=".45" stop-color="#f4f5f3" stop-opacity=".72"/>
+                <stop offset="1" stop-color="#dfe2e3" stop-opacity=".08"/>
+              </linearGradient>
+            </defs>
+
+            <g class="perspective-grid">
+              <path d="M70 560 L410 330 L750 560"/>
+              <path d="M105 505 L410 330 L715 505"/>
+              <path d="M145 455 L410 330 L675 455"/>
+              <path d="M190 410 L410 330 L630 410"/>
+              <path d="M240 370 L410 330 L580 370"/>
+              <path d="M70 560 H750"/>
+              <path d="M105 505 H715"/>
+              <path d="M145 455 H675"/>
+              <path d="M190 410 H630"/>
+              <path d="M240 370 H580"/>
+            </g>
+
+            <g class="route-paths">
+              <path id="route1" d="M142 458 C230 315 305 300 408 333 C515 368 580 270 684 192"/>
+              <path id="route2" d="M142 458 C275 510 390 490 560 430"/>
+              <path id="route3" d="M408 333 C430 190 515 135 650 118"/>
+              <path id="route4" d="M408 333 C340 245 265 205 175 160"/>
+            </g>
+
+            <g class="mission-node" transform="translate(408 333)">
+              <circle r="38"/>
+              <circle class="node-core" r="8"/>
+              <text y="64">FOVEA</text>
+            </g>
+            <g class="mission-node" transform="translate(142 458)">
+              <circle r="26"/>
+              <circle class="node-core" r="6"/>
+              <text y="50">GROUND</text>
+            </g>
+            <g class="mission-node" transform="translate(684 192)">
+              <circle r="26"/>
+              <circle class="node-core" r="6"/>
+              <text y="50">PACN</text>
+            </g>
+            <g class="mission-node" transform="translate(560 430)">
+              <circle r="23"/>
+              <circle class="node-core" r="5"/>
+              <text y="46">P-360</text>
+            </g>
+            <g class="mission-node minor" transform="translate(650 118)">
+              <circle r="15"/>
+              <circle class="node-core" r="4"/>
+              <text y="37">SENSOR</text>
+            </g>
+            <g class="mission-node minor" transform="translate(175 160)">
+              <circle r="15"/>
+              <circle class="node-core" r="4"/>
+              <text y="37">NETWORK</text>
+            </g>
+
+            <circle class="route-pulse p1" r="5"/>
+            <circle class="route-pulse p2" r="5"/>
+            <circle class="route-pulse p3" r="5"/>
+          </svg>
+          <div class="visual-caption">
+            <span>REPRESENTATIVE ARCHITECTURE</span>
+            <span>NOTIONAL / UNCLASSIFIED</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section console-section">
+      <div class="shell">
+        <div class="console-frame reveal">
+          <img src="assets/mission-console.webp" alt="Peregrine Mission Console engineering interface" loading="lazy" />
+          <div class="console-overlay">
+            <p class="kicker">FOVEA / Mission Console</p>
+            <h2>See the network as one system.</h2>
+            <p>
+              Current engineering software supports scenario work, node and network state,
+              sensor ingestion, cooperative tracks, replay, and operator-facing mission context.
+            </p>
+            <a class="text-link strong" href="pacn-01.html#software">View software direction <span>↗</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="missions" class="section mission-section">
+      <div class="shell">
+        <div class="section-intro reveal">
+          <p class="kicker">Mission Areas</p>
+          <h2>One core architecture.<br />Multiple operational paths.</h2>
+          <p class="section-lead">Representative application paths for the same sensing, networking, and mission software stack.</p>
+        </div>
+
+        <div class="mission-list">
+          <article class="mission-item reveal">
+            <div class="mission-index">01</div>
+            <div>
+              <h3>Distributed defense sensing</h3>
+              <p>Network fixed, mobile, airborne, and third-party sensors into a common track and mission layer.</p>
+            </div>
+            <span>Air / Ground / RF</span>
           </article>
-          <article class="info-card">
-            <span class="card-kicker">B</span>
-            <h3>Prototype partners</h3>
-            <p>Airframe, UAS, payload-integration, and fabrication partners aligned with rapid technical risk reduction.</p>
+          <article class="mission-item reveal">
+            <div class="mission-index">02</div>
+            <div>
+              <h3>Autonomous logistics & maneuver</h3>
+              <p>Coordinate cargo vehicles, airborne reconnaissance, relay, route awareness, and mission-state updates.</p>
+            </div>
+            <span>Cross-domain autonomy</span>
           </article>
-          <article class="info-card">
-            <span class="card-kicker">C</span>
-            <h3>Research collaboration</h3>
-            <p>Universities, labs, and suppliers interested in mission software, RF payloads, and systems experimentation.</p>
+          <article class="mission-item reveal">
+            <div class="mission-index">03</div>
+            <div>
+              <h3>Test & evaluation</h3>
+              <p>Use instrumented mission nodes, simulation, replay, and controlled interfaces to compare system behavior.</p>
+            </div>
+            <span>Lab / Range / Field</span>
+          </article>
+          <article class="mission-item reveal">
+            <div class="mission-index">04</div>
+            <div>
+              <h3>Dual-use sensing</h3>
+              <p>Apply the same distributed edge architecture to wildfire, critical infrastructure, and remote monitoring.</p>
+            </div>
+            <span>Commercial / Civil</span>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="founders" class="section section-dark">
-      <div class="shell">
-        <div class="section-head">
-          <p class="kicker">Leadership</p>
-          <h2>Built on real engineering experience.</h2>
+    <section id="company" class="section company-section">
+      <div class="shell company-grid">
+        <div class="reveal">
+          <p class="section-index">02 / Company</p>
+          <h2>Built by engineers who have worked on the systems.</h2>
         </div>
-        <div class="founder-grid founder-grid-three">
-          <article class="founder-card">
-            <div class="founder-meta">President &amp; Chief Engineer</div>
-            <h3>Austin Howard</h3>
-            <p>
-              Air Force veteran, F-16 avionics technician, systems engineer, and ASU electrical engineering student.
-              Austin brings mission-systems thinking, CAD support, technical documentation, and hands-on RF / integration experience.
-            </p>
-            <p>
-              He also created InjectLab, a research-oriented AI effort referenced for its technical novelty and applied experimentation.
-            </p>
-          </article>
-          <article class="founder-card">
-            <div class="founder-meta">Chief RF Engineering Lead</div>
-            <h3>Raul Negrao</h3>
-            <p>
-              Raul brings 20 years of Army RF, retransmission, depot-level,
-              and field communications experience across a wide range of Army systems.
-            </p>
-            <p>
-              His background anchors Peregrine's understanding of operational communications problems,
-              maintainability, and military field realities.
-            </p>
-          </article>
-          <article class="founder-card">
-            <div class="founder-meta">Mechanical Design Lead</div>
-            <h3>Jose Escobedo</h3>
-            <p>
-              Jose brings 30 years of CAD modeling, dimensional-drawing,
-              and technical-data-package experience.
-            </p>
-            <p>
-              He supports Peregrine's transition from concept to producible design,
-              configuration discipline, and mechanical documentation.
-            </p>
-          </article>
+
+        <div class="company-copy reveal">
+          <p class="large-copy">
+            Peregrine combines military avionics, Army RF and communications experience,
+            software and systems engineering, and decades of mechanical design practice.
+          </p>
+          <p>
+            We are building in El Paso with a partner-heavy model: retain the mission architecture,
+            integration knowledge, software, RF design, and system intellectual property while
+            working with specialist manufacturers, airframe partners, test organizations, and research institutions.
+          </p>
+          <div class="company-links">
+            <a class="text-link strong" href="capabilities.html">View capabilities <span>↗</span></a>
+            <a class="text-link" href="stage.html">Current company stage <span>↗</span></a>
+          </div>
         </div>
+      </div>
+
+      <div class="shell founder-lines">
+        <div class="founder-line reveal"><strong>Austin Howard</strong><span>President & Chief Engineer</span><span>USAF F-16 avionics / systems / software</span></div>
+        <div class="founder-line reveal"><strong>Raul Negrao</strong><span>Chief of RF Engineering</span><span>Army RF / communications / sustainment</span></div>
+        <div class="founder-line reveal"><strong>Jose Escobedo</strong><span>Mechanical Design Lead</span><span>CAD / drawings / producibility</span></div>
       </div>
     </section>
 
     <section id="contact" class="section contact-section">
-      <div class="shell contact-layout">
-        <div>
-          <p class="kicker">Contact</p>
-          <h2>Let's build something real.</h2>
-          <p class="section-lead">
-            We are open to early contract work, technical collaboration,
-            and serious discussions around PACN-01, FOVEA, and prototyping support.
-          </p>
-        </div>
-
-        <div class="contact-card">
-          <div class="contact-logo-stage">
-            <img src="assets/peregrine-full-logo.png" alt="Peregrine Applied Sciences logo" class="contact-logo" />
-          </div>
-          <p>Defense engineering • RF/C5ISR • autonomy • technical data</p>
-          <a href="https://peregrineappliedsciences.com">peregrineappliedsciences.com</a>
-          <a href="mailto:info@peregrineappliedsciences.com">info@peregrineappliedsciences.com</a>
-          <a href="tel:9152703223">(915) 270-3223</a>
-        </div>
+      <div class="shell contact-hero reveal">
+        <p class="kicker">Work with Peregrine</p>
+        <h2>Build the next node.</h2>
+        <p>
+          We are open to government, prime, research, manufacturing, platform, and investment conversations
+          that accelerate real integration and field demonstration.
+        </p>
+        <a class="contact-email" href="mailto:info@peregrineappliedsciences.com">info@peregrineappliedsciences.com <span>↗</span></a>
       </div>
     </section>
   </main>
 
-  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
-  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <div>
+        <img src="assets/peregrine-header-logo.png" alt="Peregrine Applied Sciences" class="footer-logo" />
+        <p>Distributed sensing / mission software / RF systems / autonomy</p>
+      </div>
+      <div class="footer-meta">
+        <span>El Paso, Texas</span>
+        <span>UEI XJT8AM2R4MT8</span>
+        <span>CAGE 225F1</span>
+      </div>
+      <div class="footer-links">
+        <a href="capabilities.html">Capabilities</a>
+        <a href="pacn-01.html">PACN</a>
+        <a href="stage.html">Current stage</a>
+        <a href="#top">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
