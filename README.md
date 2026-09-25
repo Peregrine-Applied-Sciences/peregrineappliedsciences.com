@@ -4,25 +4,19 @@ Production static website for `peregrineappliedsciences.com`, deployed from GitH
 
 ## Current page structure
 
-- `index.html` — company overview, current programs, founding team, federal identity, and near-term milestones.
-- `capabilities.html` — detailed engineering capabilities, lifecycle model, entity data, and embedded capability-statement PDF.
+- `index.html` — company overview, current programs, founding team, product architecture, and near-term milestones.
+- `capabilities.html` — detailed engineering capabilities, lifecycle model, and company snapshot.
 - `pacn-01.html` — current PACN-01 architecture, FOVEA Engine / Peregrine Mission Console engineering-MVP status, and hardware-transition strategy.
 - `stage.html` — transparent startup-stage page describing what is real today, what comes next, and how government, primes, airframe teams, research organizations, suppliers, and prototype shops can work with Peregrine.
 - `styles.css` — shared responsive design system.
 - `script.js` — navigation, active-page state, copyright year, and lightweight hero parallax.
-- `assets/Peregrine_Capability_Statement.pdf` — public capability statement embedded on the capabilities page.
 
 ## Current public company facts
 
 The site intentionally distinguishes verified/current facts from design objectives.
 
-- Legal name: **Peregrine Applied Sciences LLC**.
-- Former legal name: **Anchorpoint Managed Technologies LLC**.
-- SAM.gov legal-name update: **pending**; the active federal lookup may temporarily show the former name.
-- UEI: **XJT8AM2R4MT8**.
-- CAGE: **225F1**.
-- Primary NAICS: **541330 — Engineering Services**.
-- Secondary NAICS: **541715 — Engineering R&D**.
+- Legal name: **Peregrine Applied Sciences, Inc.**
+- Corporate structure: **Delaware C-Corporation**.
 - Location: **El Paso, Texas**.
 - Public email: **info@peregrineappliedsciences.com**.
 - Public phone: **(915) 270-3223**.
@@ -69,10 +63,9 @@ The current production setup uses the repository root and the custom domain in `
 
 ## Brand / UI direction
 
-- Deep Space Obsidian / graphite base
-- High-contrast white and slate typography
-- Cyan used only as a priority telemetry / call-to-action accent
-- Inter + JetBrains Mono
+- Light graphite / industrial gray base
+- High-contrast graphite and off-white typography
+- Plus Jakarta Sans + Space Grotesk + Inter
 - technical grid and mission-system visual language
 - responsive multi-page navigation
 - no third-party UI framework or WebGL dependency
@@ -85,4 +78,4 @@ Do not publish claims that exceed the engineering evidence.
 - Do not imply a government customer, award, endorsement, or fielding status that does not exist.
 - Do not imply an executed university partnership until an agreement or scoped effort exists.
 - Keep mission-specific RF, sensor, waveform, software implementation, and proprietary technical detail out of the public site.
-- Review imagery licensing before publication. The existing field-UAV image should not be used in a way that implies customer endorsement or actual Peregrine flight hardware if it is only representative imagery.
+- Avoid publishing internal software screenshots or R&D analysis imagery; use abstract system graphics for public explanations.
