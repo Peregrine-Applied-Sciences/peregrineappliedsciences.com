@@ -130,21 +130,54 @@
       </div>
     </section>
 
-    <section class="section media-section">
+    <section class="section software-flow-section" id="software-architecture">
       <div class="shell">
         <div class="section-head split-head">
           <div>
-            <p class="kicker">Mission console</p>
-            <h2>Operator-facing engineering software.</h2>
+            <p class="kicker">FOVEA architecture</p>
+            <h2>A shared state layer between sensors and mission nodes.</h2>
           </div>
           <p class="section-lead">
-            The current Peregrine Mission Console provides a desktop engineering environment for FOVEA scenario construction, tracking, replay, cooperative fusion, and mission-level decision review.
+            The public view intentionally shows system behavior rather than internal interfaces, implementation details,
+            or engineering screenshots.
           </p>
         </div>
-        <figure class="media-card media-card-wide">
-          <img src="assets/mission-console.webp" alt="Peregrine Mission Console interface" loading="lazy" />
-          <figcaption>Peregrine Mission Console engineering MVP.</figcaption>
-        </figure>
+
+        <div class="distributed-flow reveal" aria-label="Animated distributed FOVEA architecture">
+          <div class="distributed-inputs">
+            <div class="distributed-node"><span>RF</span><small>SENSOR</small></div>
+            <div class="distributed-node"><span>EO/IR</span><small>SENSOR</small></div>
+            <div class="distributed-node"><span>RADAR</span><small>SENSOR</small></div>
+            <div class="distributed-node"><span>PLATFORM</span><small>STATE</small></div>
+          </div>
+
+          <div class="distributed-bus">
+            <div class="bus-line"></div>
+            <i class="bus-packet p-a"></i>
+            <i class="bus-packet p-b"></i>
+            <i class="bus-packet p-c"></i>
+          </div>
+
+          <div class="distributed-core">
+            <span>FOVEA</span>
+            <strong>COMMON MISSION STATE</strong>
+            <small>NORMALIZE / CORRELATE / PROVENANCE / TASKING</small>
+          </div>
+
+          <div class="distributed-bus distributed-bus-out">
+            <div class="bus-line"></div>
+            <i class="bus-packet p-a"></i>
+            <i class="bus-packet p-b"></i>
+            <i class="bus-packet p-c"></i>
+          </div>
+
+          <div class="distributed-outputs">
+            <div class="distributed-node"><span>PACN</span><small>AIR NODE</small></div>
+            <div class="distributed-node"><span>GROUND</span><small>MISSION NODE</small></div>
+            <div class="distributed-node"><span>OPERATOR</span><small>MISSION VIEW</small></div>
+            <div class="distributed-node"><span>PARTNER</span><small>INTERFACE</small></div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -152,46 +185,30 @@
       <div class="shell">
         <div class="section-head split-head">
           <div>
-            <p class="kicker">Representative analysis</p>
-            <h2>Engineering drives the design.</h2>
+            <p class="kicker">Development method</p>
+            <h2>Model, integrate, validate, then scale.</h2>
           </div>
           <p class="section-lead">
-            Peregrine uses analysis and simulation to shape architecture decisions before committing to expensive hardware paths.
+            Peregrine uses simulation, bench integration, controlled interfaces, and representative hardware
+            to reduce technical risk before committing to larger prototype and flight-test efforts.
           </p>
-        </div>
-
-        <div class="analysis-gallery">
-          <figure class="media-card">
-            <img src="assets/radar-overlap.webp" alt="P-360R node coverage intersection heatmaps" loading="lazy" />
-            <figcaption>Representative multi-node coverage and overlap analysis.</figcaption>
-          </figure>
-          <figure class="media-card">
-            <img src="assets/radar-horizon.webp" alt="Radar horizon versus platform altitude analysis" loading="lazy" />
-            <figcaption>Representative altitude and line-of-sight trade analysis.</figcaption>
-          </figure>
         </div>
 
         <div class="program-grid">
           <article class="program-card">
-            <span class="card-label">Coverage</span>
-            <h3>Node overlap studies</h3>
-            <p>
-              Coverage and geometry studies help bound where multi-node architectures provide the best operational value.
-            </p>
+            <span class="card-label">01 / Model</span>
+            <h3>Mission and geometry trades</h3>
+            <p>Use simulation and system models to test assumptions, interfaces, coverage, and operational concepts early.</p>
           </article>
           <article class="program-card">
-            <span class="card-label">Range</span>
-            <h3>Horizon and geometry trades</h3>
-            <p>
-              Platform altitude, geometry, and environment assumptions are evaluated early to guide payload and concept decisions.
-            </p>
+            <span class="card-label">02 / Integrate</span>
+            <h3>Representative hardware</h3>
+            <p>Connect software, RF functions, sensors, compute, and platform interfaces in controlled environments.</p>
           </article>
           <article class="program-card">
-            <span class="card-label">Workflow</span>
-            <h3>Simulation-first development</h3>
-            <p>
-              Modeling and software validation provide an affordable path to refine the concept before full prototype integration.
-            </p>
+            <span class="card-label">03 / Validate</span>
+            <h3>Evidence-driven iteration</h3>
+            <p>Use repeatable tests and measured behavior to refine the architecture before scaling into field demonstration.</p>
           </article>
         </div>
       </div>
