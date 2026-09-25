@@ -2,8 +2,8 @@ const menuButton = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.site-nav');
 
 menuButton?.addEventListener('click', () => {
-  const isOpen = nav.classList.toggle('open');
-  menuButton.setAttribute('aria-expanded', String(isOpen));
+  const isOpen = nav?.classList.toggle('open');
+  menuButton.setAttribute('aria-expanded', String(Boolean(isOpen)));
 });
 
 document.querySelectorAll('.site-nav a').forEach(link => {
@@ -15,255 +15,259 @@ document.querySelectorAll('.site-nav a').forEach(link => {
 
 const page = document.body.dataset.page;
 if (page) {
-  const active = document.querySelector(`[data-nav="${page}"]`);
-  active?.classList.add('active');
+  document.querySelector(`[data-nav="${page}"]`)?.classList.add('active');
 }
 
-function initHeroGlobe() {
-  const canvas = document.getElementById('heroGlobeCanvas');
-  if (!canvas || !window.d3 || !window.topojson) return;
+function initReveal() {
+  const items = document.querySelectorAll('.reveal');
+  if (!items.length) return;
 
-  const context = canvas.getContext('2d');
-  const projection = d3.geoOrthographic().clipAngle(90).precision(0.4);
-  const path = d3.geoPath(projection, context);
-  const graticule = d3.geoGraticule10();
+  if (!('IntersectionObserver' in window)) {
+    items.forEach(item => item.classList.add('visible'));
+    return;
+  }
 
-  const defaultNode = {
-    lat: 31.7619,
-    lon: -106.4850,
-    label: 'Peregrine node'
-  };
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -5% 0px' });
 
+  items.forEach(item => observer.observe(item));
+}
+
+function initRoutingCanvas() {
+  const canvas = document.getElementById('routingCanvas');
+  if (!canvas) return;
+
+  const ctx = canvas.getContext('2d', { alpha: true });
+  if (!ctx) return;
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const state = {
     width: 0,
     height: 0,
-    scale: 1,
-    rotation: [106, -28, 0],
-    isDragging: false,
-    lastInteraction: Date.now(),
-    userNode: { ...defaultNode },
-    worldLand: null,
-    worldBorders: null,
-    usStates: null,
-    usNation: null,
-    tracks: [
-      { coords: [[-122.33, 47.60], [-106.48, 31.76], [-97.04, 32.90], [-77.04, 38.90]], color: '#37d8ff' },
-      { coords: [[-117.16, 32.72], [-111.89, 40.76], [-104.99, 39.74], [-95.37, 29.76]], color: '#8cf970' },
-      { coords: [[-80.19, 25.76], [-87.62, 41.88], [-118.24, 34.05]], color: '#ffb347' }
-    ],
-    points: [
-      { lat: 47.60, lon: -122.33, color: '#37d8ff' },
-      { lat: 32.90, lon: -97.04, color: '#8cf970' },
-      { lat: 38.90, lon: -77.04, color: '#ffb347' },
-      { lat: 29.76, lon: -95.37, color: '#f972c3' }
-    ]
+    dpr: 1,
+    time: 0,
+    mouseX: 0,
+    mouseY: 0,
+    targetMouseX: 0,
+    targetMouseY: 0,
+    focus: null
   };
 
-  function render() {
-    context.clearRect(0, 0, state.width, state.height);
+  const nodes = [
+    { id: 'fovea', x: .71, y: .47, r: 8, label: 'FOVEA' },
+    { id: 'p360', x: .84, y: .66, r: 5, label: 'P-360' },
+    { id: 'pacn', x: .89, y: .27, r: 5, label: 'PACN' },
+    { id: 'nodes', x: .61, y: .75, r: 5, label: 'GROUND' },
+    { id: 'sensor-a', x: .66, y: .21, r: 3, label: 'RF' },
+    { id: 'sensor-b', x: .95, y: .49, r: 3, label: 'EO/IR' },
+    { id: 'network', x: .75, y: .82, r: 3, label: 'NETWORK' }
+  ];
 
-    context.save();
-    context.beginPath();
-    path({ type: 'Sphere' });
-    context.fillStyle = '#07141e';
-    context.fill();
-    context.restore();
-
-    context.save();
-    context.beginPath();
-    path(graticule);
-    context.strokeStyle = 'rgba(71, 164, 215, 0.18)';
-    context.lineWidth = 0.8;
-    context.stroke();
-    context.restore();
-
-    if (state.worldLand) {
-      context.save();
-      context.beginPath();
-      path(state.worldLand);
-      context.fillStyle = '#0f2230';
-      context.fill();
-      context.restore();
-    }
-
-    if (state.worldBorders) {
-      context.save();
-      context.beginPath();
-      path(state.worldBorders);
-      context.strokeStyle = 'rgba(111, 214, 255, 0.55)';
-      context.lineWidth = 1;
-      context.stroke();
-      context.restore();
-    }
-
-    if (state.usNation) {
-      context.save();
-      context.beginPath();
-      path(state.usNation);
-      context.strokeStyle = 'rgba(111, 214, 255, 0.65)';
-      context.lineWidth = 1.1;
-      context.stroke();
-      context.restore();
-    }
-
-    if (state.usStates) {
-      context.save();
-      context.beginPath();
-      path(state.usStates);
-      context.strokeStyle = 'rgba(111, 214, 255, 0.25)';
-      context.lineWidth = 0.8;
-      context.stroke();
-      context.restore();
-    }
-
-    state.tracks.forEach(track => {
-      context.save();
-      context.beginPath();
-      path({ type: 'LineString', coordinates: track.coords });
-      context.strokeStyle = track.color;
-      context.lineWidth = 1.4;
-      context.globalAlpha = 0.85;
-      context.stroke();
-      context.restore();
-    });
-
-    state.points.forEach(point => {
-      const projected = projection([point.lon, point.lat]);
-      if (!projected) return;
-      context.save();
-      context.beginPath();
-      context.arc(projected[0], projected[1], 4, 0, Math.PI * 2);
-      context.fillStyle = point.color;
-      context.shadowColor = point.color;
-      context.shadowBlur = 16;
-      context.fill();
-      context.restore();
-    });
-
-    const projected = projection([state.userNode.lon, state.userNode.lat]);
-    if (projected) {
-      context.save();
-      context.beginPath();
-      context.arc(projected[0], projected[1], 5, 0, Math.PI * 2);
-      context.fillStyle = '#6ef2ff';
-      context.shadowColor = '#6ef2ff';
-      context.shadowBlur = 18;
-      context.fill();
-
-      context.beginPath();
-      context.arc(projected[0], projected[1], 12, 0, Math.PI * 2);
-      context.strokeStyle = 'rgba(110, 242, 255, 0.6)';
-      context.lineWidth = 1.2;
-      context.stroke();
-
-      context.font = '12px "JetBrains Mono", monospace';
-      context.fillStyle = '#d9fbff';
-      context.fillText(state.userNode.label, projected[0] + 14, projected[1] - 10);
-      context.restore();
-    }
-
-    context.save();
-    context.beginPath();
-    path({ type: 'Sphere' });
-    context.strokeStyle = 'rgba(78, 212, 255, 0.78)';
-    context.lineWidth = 1.4;
-    context.stroke();
-    context.restore();
-  }
+  const links = [
+    ['nodes', 'fovea'],
+    ['fovea', 'pacn'],
+    ['fovea', 'p360'],
+    ['sensor-a', 'fovea'],
+    ['sensor-b', 'fovea'],
+    ['network', 'fovea'],
+    ['nodes', 'p360'],
+    ['p360', 'pacn']
+  ];
 
   function resize() {
-    const bounds = canvas.parentElement.getBoundingClientRect();
-    const dpr = window.devicePixelRatio || 1;
-    state.width = Math.max(320, Math.floor(bounds.width));
-    state.height = Math.max(320, Math.floor(bounds.height));
-    canvas.width = Math.floor(state.width * dpr);
-    canvas.height = Math.floor(state.height * dpr);
-    canvas.style.width = `${state.width}px`;
-    canvas.style.height = `${state.height}px`;
-    context.setTransform(dpr, 0, 0, dpr, 0, 0);
-    projection
-      .translate([state.width * 0.64, state.height * 0.54])
-      .scale(Math.min(state.width, state.height) * 0.45 * state.scale)
-      .rotate(state.rotation);
-    render();
+    const bounds = canvas.getBoundingClientRect();
+    state.dpr = Math.min(window.devicePixelRatio || 1, 2);
+    state.width = Math.max(320, bounds.width);
+    state.height = Math.max(500, bounds.height);
+    canvas.width = Math.round(state.width * state.dpr);
+    canvas.height = Math.round(state.height * state.dpr);
+    ctx.setTransform(state.dpr, 0, 0, state.dpr, 0, 0);
   }
 
-  function tick() {
-    if (!state.isDragging && Date.now() - state.lastInteraction > 1400) {
-      state.rotation = [state.rotation[0] + 0.08, state.rotation[1], state.rotation[2]];
-      projection.rotate(state.rotation);
-      render();
+  function project(node) {
+    const parallaxX = state.mouseX * 14;
+    const parallaxY = state.mouseY * 9;
+    return {
+      x: node.x * state.width + parallaxX * (node.x - .5),
+      y: node.y * state.height + parallaxY * (node.y - .5)
+    };
+  }
+
+  function drawPerspectiveGrid() {
+    const cx = state.width * .78;
+    const horizonY = state.height * .37;
+    const floorY = state.height * .95;
+    const topWidth = state.width * .19;
+    const bottomWidth = state.width * .72;
+
+    ctx.save();
+    ctx.strokeStyle = 'rgba(238,241,241,.10)';
+    ctx.lineWidth = 1;
+
+    const horizontalCount = 7;
+    for (let i = 0; i < horizontalCount; i++) {
+      const t = i / (horizontalCount - 1);
+      const eased = t * t;
+      const y = horizonY + (floorY - horizonY) * eased;
+      const halfWidth = (topWidth + (bottomWidth - topWidth) * eased) / 2;
+      ctx.beginPath();
+      ctx.moveTo(cx - halfWidth, y);
+      ctx.lineTo(cx + halfWidth, y);
+      ctx.stroke();
     }
-    requestAnimationFrame(tick);
+
+    const verticalCount = 9;
+    for (let i = 0; i < verticalCount; i++) {
+      const t = i / (verticalCount - 1);
+      const topX = cx - topWidth / 2 + topWidth * t;
+      const bottomX = cx - bottomWidth / 2 + bottomWidth * t;
+      ctx.beginPath();
+      ctx.moveTo(topX, horizonY);
+      ctx.lineTo(bottomX, floorY);
+      ctx.stroke();
+    }
+
+    ctx.restore();
   }
 
-  d3.select(canvas)
-    .call(
-      d3.drag()
-        .on('start', () => {
-          state.isDragging = true;
-          state.lastInteraction = Date.now();
-        })
-        .on('drag', event => {
-          state.rotation = [
-            state.rotation[0] + event.dx * 0.25,
-            Math.max(-45, Math.min(45, state.rotation[1] - event.dy * 0.25)),
-            state.rotation[2]
-          ];
-          projection.rotate(state.rotation);
-          state.lastInteraction = Date.now();
-          render();
-        })
-        .on('end', () => {
-          state.isDragging = false;
-          state.lastInteraction = Date.now();
-        })
-    )
-    .call(
-      d3.zoom()
-        .scaleExtent([0.82, 1.85])
-        .on('zoom', event => {
-          state.scale = event.transform.k;
-          resize();
-          state.lastInteraction = Date.now();
-        })
-    );
+  function curve(a, b, bend = .16) {
+    const pa = project(a);
+    const pb = project(b);
+    const dx = pb.x - pa.x;
+    const dy = pb.y - pa.y;
+    const nx = -dy;
+    const ny = dx;
+    const magnitude = Math.max(1, Math.hypot(nx, ny));
+    const offset = Math.min(110, Math.hypot(dx, dy) * bend);
+    const mx = (pa.x + pb.x) / 2 + (nx / magnitude) * offset;
+    const my = (pa.y + pb.y) / 2 + (ny / magnitude) * offset;
 
-  Promise.all([
-    fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json').then(res => res.json()),
-    fetch('https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json').then(res => res.json())
-  ]).then(([world, us]) => {
-    state.worldLand = topojson.feature(world, world.objects.land);
-    state.worldBorders = topojson.mesh(world, world.objects.countries, (a, b) => a !== b);
-    state.usNation = topojson.feature(us, us.objects.nation);
-    state.usStates = topojson.mesh(us, us.objects.states, (a, b) => a !== b);
+    return { pa, pb, cx: mx, cy: my };
+  }
+
+  function quadPoint(q, t) {
+    const mt = 1 - t;
+    return {
+      x: mt * mt * q.pa.x + 2 * mt * t * q.cx + t * t * q.pb.x,
+      y: mt * mt * q.pa.y + 2 * mt * t * q.cy + t * t * q.pb.y
+    };
+  }
+
+  function drawLink(a, b, index) {
+    const q = curve(a, b, index % 2 === 0 ? .13 : -.11);
+    const focusActive = !state.focus || state.focus === a.id || state.focus === b.id;
+
+    ctx.save();
+    ctx.beginPath();
+    ctx.moveTo(q.pa.x, q.pa.y);
+    ctx.quadraticCurveTo(q.cx, q.cy, q.pb.x, q.pb.y);
+    ctx.setLineDash([5, 9]);
+    ctx.lineDashOffset = -state.time * 11;
+    ctx.strokeStyle = focusActive ? 'rgba(244,245,243,.37)' : 'rgba(244,245,243,.09)';
+    ctx.lineWidth = focusActive ? 1.15 : .8;
+    ctx.stroke();
+
+    if (focusActive && !prefersReducedMotion) {
+      const t = (state.time * .095 + index * .17) % 1;
+      const p = quadPoint(q, t);
+      ctx.setLineDash([]);
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, 2.8, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(244,245,243,.95)';
+      ctx.shadowBlur = 12;
+      ctx.shadowColor = 'rgba(244,245,243,.65)';
+      ctx.fill();
+    }
+    ctx.restore();
+  }
+
+  function drawNode(node) {
+    const p = project(node);
+    const isFocus = !state.focus || state.focus === node.id;
+    const primary = ['fovea', 'p360', 'pacn', 'nodes'].includes(node.id);
+
+    ctx.save();
+
+    if (primary) {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, node.r * 3.2, 0, Math.PI * 2);
+      ctx.strokeStyle = isFocus ? 'rgba(244,245,243,.30)' : 'rgba(244,245,243,.08)';
+      ctx.lineWidth = 1;
+      ctx.stroke();
+    }
+
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, node.r, 0, Math.PI * 2);
+    ctx.fillStyle = isFocus ? 'rgba(244,245,243,.98)' : 'rgba(244,245,243,.32)';
+    ctx.fill();
+
+    if (primary) {
+      ctx.font = '500 11px "Space Grotesk", sans-serif';
+      ctx.letterSpacing = '1px';
+      ctx.fillStyle = isFocus ? 'rgba(244,245,243,.82)' : 'rgba(244,245,243,.30)';
+      ctx.fillText(node.label, p.x + 18, p.y - 14);
+    }
+
+    ctx.restore();
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, state.width, state.height);
+    state.mouseX += (state.targetMouseX - state.mouseX) * .04;
+    state.mouseY += (state.targetMouseY - state.mouseY) * .04;
+
+    drawPerspectiveGrid();
+
+    links.forEach(([from, to], index) => {
+      const a = nodes.find(node => node.id === from);
+      const b = nodes.find(node => node.id === to);
+      if (a && b) drawLink(a, b, index);
+    });
+
+    nodes.forEach(drawNode);
+
+    if (!prefersReducedMotion) {
+      state.time += .016;
+      requestAnimationFrame(draw);
+    }
+  }
+
+  canvas.addEventListener('pointermove', event => {
+    const bounds = canvas.getBoundingClientRect();
+    state.targetMouseX = ((event.clientX - bounds.left) / bounds.width - .5) * 2;
+    state.targetMouseY = ((event.clientY - bounds.top) / bounds.height - .5) * 2;
+  });
+
+  canvas.addEventListener('pointerleave', () => {
+    state.targetMouseX = 0;
+    state.targetMouseY = 0;
+  });
+
+  document.querySelectorAll('[data-route-focus]').forEach(row => {
+    row.addEventListener('mouseenter', () => {
+      state.focus = row.dataset.routeFocus || null;
+      if (prefersReducedMotion) draw();
+    });
+    row.addEventListener('mouseleave', () => {
+      state.focus = null;
+      if (prefersReducedMotion) draw();
+    });
+  });
+
+  window.addEventListener('resize', () => {
     resize();
-    render();
-    requestAnimationFrame(tick);
-  }).catch(() => resize());
+    if (prefersReducedMotion) draw();
+  });
 
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(
-      position => {
-        state.userNode = {
-          lat: position.coords.latitude,
-          lon: position.coords.longitude,
-          label: 'Visitor node'
-        };
-        state.rotation = [-state.userNode.lon, -state.userNode.lat, 0];
-        projection.rotate(state.rotation);
-        state.lastInteraction = Date.now();
-        render();
-      },
-      () => {
-        state.userNode = { ...defaultNode };
-      },
-      { enableHighAccuracy: false, timeout: 4000, maximumAge: 600000 }
-    );
-  }
-
-  window.addEventListener('resize', resize);
   resize();
+  draw();
 }
 
-initHeroGlobe();
+initReveal();
+initRoutingCanvas();
