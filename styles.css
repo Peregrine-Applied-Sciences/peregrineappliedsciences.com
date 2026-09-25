@@ -2042,3 +2042,352 @@ h3 { letter-spacing: -.036em; }
     transition-duration: .001ms !important;
   }
 }
+
+
+/* ===== SYSTEM FLOW VISUALS ===== */
+
+.flow-section,
+.software-flow-section {
+  background: #111516;
+  color: #f3f5f1;
+}
+
+.flow-grid {
+  display: grid;
+  grid-template-columns: minmax(340px,.82fr) minmax(620px,1.18fr);
+  gap: clamp(54px,7vw,110px);
+  align-items: center;
+}
+
+.flow-copy .kicker,
+.flow-copy h2,
+.flow-copy .text-link {
+  color: #f3f5f1;
+}
+
+.flow-copy > p:not(.kicker) {
+  max-width: 620px;
+  margin: 28px 0 34px;
+  color: #b8bfbd;
+  font-size: 1.04rem;
+  line-height: 1.72;
+}
+
+.flow-visual,
+.distributed-flow {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.13);
+  background:
+    linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px),
+    #15191a;
+  background-size: 46px 46px;
+}
+
+.flow-visual {
+  min-height: 560px;
+  display: grid;
+  align-content: center;
+  padding: 54px 34px 76px;
+}
+
+.flow-visual::before,
+.distributed-flow::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 50% 50%, rgba(255,255,255,.055), transparent 42%);
+}
+
+.flow-track {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 74px 1fr 74px 1fr 74px 1fr;
+  align-items: center;
+}
+
+.flow-block {
+  min-height: 155px;
+  display: grid;
+  align-content: space-between;
+  gap: 15px;
+  padding: 19px;
+  border: 1px solid rgba(255,255,255,.22);
+  background: rgba(16,20,21,.82);
+}
+
+.flow-block-core {
+  border-color: rgba(255,255,255,.58);
+  box-shadow: 0 0 0 1px rgba(255,255,255,.04), 0 0 44px rgba(255,255,255,.05);
+}
+
+.flow-block span,
+.chain-node span {
+  color: #78817f;
+  font-family: var(--technical);
+  font-size: .62rem;
+  letter-spacing: .12em;
+}
+
+.flow-block strong,
+.chain-node strong {
+  color: #f3f5f1;
+  font-family: var(--technical);
+  font-size: .82rem;
+  font-weight: 500;
+  letter-spacing: .09em;
+}
+
+.flow-block small,
+.chain-node small {
+  color: #858e8c;
+  font-family: var(--technical);
+  font-size: .54rem;
+  line-height: 1.55;
+  letter-spacing: .08em;
+}
+
+.flow-link,
+.chain-path {
+  position: relative;
+  height: 1px;
+  background: rgba(255,255,255,.13);
+}
+
+.flow-link i,
+.chain-path i {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #f2f4f0;
+  box-shadow: 0 0 12px rgba(255,255,255,.45);
+  transform: translate(-50%,-50%);
+  animation: flowPacket 3.2s linear infinite;
+}
+
+.flow-link i:nth-child(2),
+.chain-path i:nth-child(2) { animation-delay: -1.05s; }
+.flow-link i:nth-child(3),
+.chain-path i:nth-child(3) { animation-delay: -2.1s; }
+
+.flow-status {
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  color: #697270;
+  font-family: var(--technical);
+  font-size: .57rem;
+  letter-spacing: .10em;
+}
+
+.capability-chain {
+  display: grid;
+  grid-template-columns: 1fr 44px 1fr 44px 1fr 44px 1fr 44px 1fr;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.chain-node {
+  min-height: 170px;
+  display: grid;
+  align-content: space-between;
+  gap: 14px;
+  padding: 22px;
+  border: 1px solid rgba(15,18,19,.22);
+  background: rgba(255,255,255,.28);
+}
+
+.chain-node strong { color: #111516; }
+.chain-node small { color: #6d7475; }
+.chain-path { background: rgba(15,18,19,.16); }
+.chain-path i {
+  background: #111516;
+  box-shadow: 0 0 10px rgba(15,18,19,.2);
+}
+
+.software-flow-section .section-head h2,
+.software-flow-section .kicker {
+  color: #f4f5f2;
+}
+
+.software-flow-section .section-lead {
+  color: #aeb6b3;
+}
+
+.distributed-flow {
+  min-height: 630px;
+  display: grid;
+  grid-template-columns: minmax(160px,.75fr) 100px minmax(260px,1.25fr) 100px minmax(160px,.75fr);
+  align-items: center;
+  gap: 18px;
+  padding: 54px;
+}
+
+.distributed-inputs,
+.distributed-outputs {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 14px;
+}
+
+.distributed-node {
+  min-height: 90px;
+  display: grid;
+  align-content: center;
+  gap: 7px;
+  padding: 16px;
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(17,21,22,.78);
+}
+
+.distributed-node span,
+.distributed-core span {
+  color: #f3f5f1;
+  font-family: var(--technical);
+  font-size: .72rem;
+  letter-spacing: .08em;
+}
+
+.distributed-node small,
+.distributed-core small {
+  color: #747d7a;
+  font-family: var(--technical);
+  font-size: .55rem;
+  letter-spacing: .10em;
+}
+
+.distributed-bus {
+  position: relative;
+  height: 100%;
+  min-height: 410px;
+}
+
+.bus-line {
+  position: absolute;
+  left: 50%;
+  top: 8%;
+  bottom: 8%;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, rgba(255,255,255,.26) 18%, rgba(255,255,255,.26) 82%, transparent);
+}
+
+.bus-packet {
+  position: absolute;
+  left: 50%;
+  top: 8%;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #f3f5f1;
+  box-shadow: 0 0 14px rgba(255,255,255,.48);
+  transform: translateX(-50%);
+  animation: busTravel 4s linear infinite;
+}
+
+.bus-packet.p-b { animation-delay: -1.33s; }
+.bus-packet.p-c { animation-delay: -2.66s; }
+.distributed-bus-out .bus-packet { animation-direction: reverse; }
+
+.distributed-core {
+  position: relative;
+  z-index: 1;
+  min-height: 250px;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 14px;
+  padding: 35px;
+  text-align: center;
+  border: 1px solid rgba(255,255,255,.52);
+  background: rgba(23,27,28,.88);
+  box-shadow: 0 0 70px rgba(255,255,255,.04);
+}
+
+.distributed-core::before,
+.distributed-core::after {
+  content: '';
+  position: absolute;
+  border: 1px solid rgba(255,255,255,.10);
+  inset: -22px;
+  pointer-events: none;
+  animation: corePulse 4s ease-in-out infinite;
+}
+
+.distributed-core::after {
+  inset: -44px;
+  animation-delay: -2s;
+}
+
+.distributed-core strong {
+  color: #f3f5f1;
+  font-family: var(--display);
+  font-size: clamp(1.45rem,2.2vw,2.4rem);
+  font-weight: 500;
+  letter-spacing: -.035em;
+}
+
+@keyframes flowPacket {
+  from { left: 0; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  to { left: 100%; opacity: 0; }
+}
+
+@keyframes busTravel {
+  from { top: 8%; opacity: 0; }
+  12% { opacity: 1; }
+  88% { opacity: 1; }
+  to { top: 92%; opacity: 0; }
+}
+
+@keyframes corePulse {
+  0%,100% { opacity: .25; transform: scale(.98); }
+  50% { opacity: .7; transform: scale(1.015); }
+}
+
+@media (max-width: 1180px) {
+  .flow-grid { grid-template-columns: 1fr; }
+  .flow-track { grid-template-columns: 1fr 52px 1fr 52px 1fr 52px 1fr; }
+  .capability-chain { grid-template-columns: 1fr; gap: 0; }
+  .chain-path { width: 1px; height: 38px; margin-inline: auto; }
+  .chain-path i { animation: busTravel 3.2s linear infinite; left: 50%; top: 0; }
+  .distributed-flow {
+    grid-template-columns: 1fr;
+    padding: 34px;
+  }
+  .distributed-inputs,
+  .distributed-outputs { grid-template-columns: repeat(4,1fr); }
+  .distributed-bus { min-height: 70px; height: 70px; }
+  .bus-line { left: 8%; right: 8%; top: 50%; bottom: auto; width: auto; height: 1px; }
+  .bus-packet { top: 50%; left: 8%; animation: horizontalBus 4s linear infinite; transform: translateY(-50%); }
+  .distributed-bus-out .bus-packet { animation-direction: normal; }
+  .distributed-core { min-height: 210px; }
+}
+
+@keyframes horizontalBus {
+  from { left: 8%; opacity: 0; }
+  12% { opacity: 1; }
+  88% { opacity: 1; }
+  to { left: 92%; opacity: 0; }
+}
+
+@media (max-width: 720px) {
+  .flow-visual { min-height: auto; padding: 28px 20px 66px; }
+  .flow-track { grid-template-columns: 1fr; gap: 0; }
+  .flow-link { width: 1px; height: 38px; margin-inline: auto; }
+  .flow-link i { left: 50%; top: 0; animation: busTravel 3.2s linear infinite; }
+  .flow-status { gap: 18px; flex-direction: column; }
+  .distributed-inputs,
+  .distributed-outputs { grid-template-columns: 1fr 1fr; }
+  .distributed-flow { padding: 24px; }
+}
