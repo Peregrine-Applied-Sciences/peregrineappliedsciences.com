@@ -107,7 +107,7 @@ function initRoutingCanvas() {
     const bottomWidth = state.width * .72;
 
     ctx.save();
-    ctx.strokeStyle = 'rgba(16,19,20,.105)';
+    ctx.strokeStyle = 'rgba(238,241,241,.10)';
     ctx.lineWidth = 1;
 
     const horizontalCount = 7;
@@ -169,7 +169,7 @@ function initRoutingCanvas() {
     ctx.quadraticCurveTo(q.cx, q.cy, q.pb.x, q.pb.y);
     ctx.setLineDash([5, 9]);
     ctx.lineDashOffset = -state.time * 11;
-    ctx.strokeStyle = focusActive ? 'rgba(16,19,20,.38)' : 'rgba(16,19,20,.08)';
+    ctx.strokeStyle = focusActive ? 'rgba(244,245,243,.37)' : 'rgba(244,245,243,.09)';
     ctx.lineWidth = focusActive ? 1.15 : .8;
     ctx.stroke();
 
@@ -179,9 +179,9 @@ function initRoutingCanvas() {
       ctx.setLineDash([]);
       ctx.beginPath();
       ctx.arc(p.x, p.y, 2.8, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(16,19,20,.94)';
+      ctx.fillStyle = 'rgba(244,245,243,.95)';
       ctx.shadowBlur = 12;
-      ctx.shadowColor = 'rgba(16,19,20,.28)';
+      ctx.shadowColor = 'rgba(244,245,243,.65)';
       ctx.fill();
     }
     ctx.restore();
@@ -197,20 +197,20 @@ function initRoutingCanvas() {
     if (primary) {
       ctx.beginPath();
       ctx.arc(p.x, p.y, node.r * 3.2, 0, Math.PI * 2);
-      ctx.strokeStyle = isFocus ? 'rgba(16,19,20,.28)' : 'rgba(16,19,20,.07)';
+      ctx.strokeStyle = isFocus ? 'rgba(244,245,243,.30)' : 'rgba(244,245,243,.08)';
       ctx.lineWidth = 1;
       ctx.stroke();
     }
 
     ctx.beginPath();
     ctx.arc(p.x, p.y, node.r, 0, Math.PI * 2);
-    ctx.fillStyle = isFocus ? 'rgba(16,19,20,.98)' : 'rgba(16,19,20,.28)';
+    ctx.fillStyle = isFocus ? 'rgba(244,245,243,.98)' : 'rgba(244,245,243,.32)';
     ctx.fill();
 
     if (primary) {
       ctx.font = '500 11px "Space Grotesk", sans-serif';
       ctx.letterSpacing = '1px';
-      ctx.fillStyle = isFocus ? 'rgba(16,19,20,.78)' : 'rgba(16,19,20,.28)';
+      ctx.fillStyle = isFocus ? 'rgba(244,245,243,.82)' : 'rgba(244,245,243,.30)';
       ctx.fillText(node.label, p.x + 18, p.y - 14);
     }
 
@@ -223,24 +223,6 @@ function initRoutingCanvas() {
     state.mouseY += (state.targetMouseY - state.mouseY) * .04;
 
     drawPerspectiveGrid();
-
-    const hub = project(nodes[0]);
-    ctx.save();
-    ctx.strokeStyle = 'rgba(16,19,20,.08)';
-    ctx.lineWidth = 1;
-    [82, 152, 236].forEach((radius, i) => {
-      ctx.beginPath();
-      ctx.arc(hub.x, hub.y, radius + Math.sin(state.time * .55 + i) * 3, 0, Math.PI * 2);
-      ctx.stroke();
-    });
-    ctx.beginPath();
-    ctx.moveTo(hub.x - 270, hub.y);
-    ctx.lineTo(hub.x + 270, hub.y);
-    ctx.moveTo(hub.x, hub.y - 270);
-    ctx.lineTo(hub.x, hub.y + 270);
-    ctx.strokeStyle = 'rgba(16,19,20,.045)';
-    ctx.stroke();
-    ctx.restore();
 
     links.forEach(([from, to], index) => {
       const a = nodes.find(node => node.id === from);
