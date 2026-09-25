@@ -2533,3 +2533,239 @@ main,
     background: rgba(226, 227, 223, .985);
   }
 }
+
+
+/* ===== ORIGINAL GRAPHITE GRAY PALETTE RESTORE ===== */
+
+/* Exact palette from the first light-graphite redesign. */
+:root {
+  --bg: #e2e3df;
+  --bg-deep: #d1d3cf;
+  --bg-soft: #eceeeb;
+  --panel: #f3f4f1;
+  --panel-2: #daddd8;
+  --line: rgba(15, 18, 19, .22);
+  --line-soft: rgba(15, 18, 19, .11);
+  --line-faint: rgba(15, 18, 19, .055);
+  --text: #101314;
+  --text-soft: #252a2b;
+  --muted: #5f6667;
+  --muted-2: #7b8181;
+  --accent: #111516;
+  --black: #080a0b;
+}
+
+/* Global canvas */
+html,
+body,
+main {
+  background: var(--bg) !important;
+  color: var(--text);
+}
+
+/* Restore the original subtle tonal variation instead of black section bands. */
+.statement-section {
+  background: #eef0ed !important;
+}
+
+.system-section {
+  background: #e4e5e1 !important;
+}
+
+.mission-architecture {
+  background: #d7d9d5 !important;
+}
+
+.mission-section {
+  background: #eceeeb !important;
+}
+
+.company-section,
+.flow-section {
+  background: #e2e3df !important;
+}
+
+.section-dark {
+  background: #d3d5d1 !important;
+}
+
+.software-flow-section {
+  background: #e4e5e1 !important;
+}
+
+.contact-section {
+  background: #d1d3cf !important;
+}
+
+.site-footer {
+  background: #c9ccc7 !important;
+  color: var(--text) !important;
+}
+
+.page-hero,
+.page-hero-tight {
+  background:
+    linear-gradient(rgba(15,18,19,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15,18,19,.035) 1px, transparent 1px),
+    #e8eae7 !important;
+  background-size: 64px 64px !important;
+}
+
+/* Original hero gray treatment. */
+.hero-routing {
+  background:
+    radial-gradient(circle at 84% 42%, rgba(255,255,255,.55), transparent 25%),
+    linear-gradient(120deg, #e8e9e6 0%, #dde0dc 52%, #d1d4d0 100%) !important;
+}
+
+.hero-noise {
+  opacity: 1 !important;
+  background:
+    linear-gradient(90deg, rgba(232,233,230,.98) 0%, rgba(232,233,230,.92) 34%, rgba(232,233,230,.36) 60%, rgba(232,233,230,.06) 100%),
+    radial-gradient(circle at 88% 40%, rgba(255,255,255,.28), transparent 28%) !important;
+}
+
+/* Header remains in the same gray family. */
+.site-header {
+  background: rgba(226, 227, 223, .92) !important;
+  border-color: rgba(15,18,19,.11) !important;
+}
+
+/* Remove the later dark-panel treatment from the diagrams.
+   Diagrams now live inside the gray system too. */
+.flow-visual,
+.distributed-flow,
+.diagram-card,
+.diagram-shell,
+.console-frame {
+  background:
+    linear-gradient(rgba(15,18,19,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15,18,19,.035) 1px, transparent 1px),
+    #daddd8 !important;
+  background-size: 46px 46px !important;
+  color: var(--text) !important;
+  border-color: rgba(15,18,19,.18) !important;
+  box-shadow: none !important;
+}
+
+/* Flow/block components use gray cards with black typography. */
+.flow-block,
+.distributed-node,
+.distributed-core,
+.chain-node {
+  background: rgba(243,244,241,.72) !important;
+  border-color: rgba(15,18,19,.24) !important;
+  color: var(--text) !important;
+}
+
+.flow-block-core,
+.distributed-core {
+  border-color: rgba(15,18,19,.55) !important;
+  box-shadow: 0 0 0 1px rgba(15,18,19,.035) !important;
+}
+
+.flow-block strong,
+.chain-node strong,
+.distributed-node span,
+.distributed-core span,
+.distributed-core strong {
+  color: #101314 !important;
+}
+
+.flow-block small,
+.chain-node small,
+.distributed-node small,
+.distributed-core small,
+.flow-status {
+  color: #697071 !important;
+}
+
+/* Packet routes stay high-contrast graphite on gray. */
+.flow-link,
+.chain-path {
+  background: rgba(15,18,19,.20) !important;
+}
+
+.flow-link i,
+.chain-path i,
+.bus-packet {
+  background: #111516 !important;
+  box-shadow: 0 0 10px rgba(15,18,19,.22) !important;
+}
+
+.bus-line {
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(15,18,19,.28) 18%,
+    rgba(15,18,19,.28) 82%,
+    transparent
+  ) !important;
+}
+
+/* SVG / architecture diagram palette on light graphite. */
+.perspective-grid path {
+  stroke: rgba(15,18,19,.13) !important;
+}
+
+.route-paths path,
+.svg-route {
+  stroke: rgba(15,18,19,.34) !important;
+}
+
+.mission-node circle,
+.svg-block,
+.svg-small-block rect {
+  fill: rgba(243,244,241,.72) !important;
+  stroke: rgba(15,18,19,.45) !important;
+}
+
+.mission-node .node-core,
+.route-pulse,
+.svg-packet,
+.svg-packets circle,
+.svg-activity circle {
+  fill: #111516 !important;
+}
+
+.mission-node text,
+.svg-eyebrow,
+.svg-index,
+.svg-main-title,
+.svg-block-title,
+.svg-copy,
+.svg-block-sub,
+.svg-caption {
+  fill: #252a2b !important;
+}
+
+.svg-core-ring {
+  fill: none !important;
+  stroke: rgba(15,18,19,.12) !important;
+}
+
+/* Contact/footer typography stays dark on the gray palette. */
+.contact-section .kicker,
+.contact-section h2,
+.contact-section .contact-email,
+.site-footer,
+.site-footer p,
+.footer-meta,
+.footer-links {
+  color: var(--text) !important;
+}
+
+.contact-section .contact-hero > p:not(.kicker) {
+  color: var(--muted) !important;
+}
+
+.site-footer .footer-logo {
+  filter: grayscale(1) contrast(1.25) !important;
+}
+
+/* Mobile nav stays inside the exact same gray family. */
+@media (max-width: 820px) {
+  .site-nav {
+    background: rgba(232,234,231,.985) !important;
+  }
+}
