@@ -213,18 +213,47 @@
       </div>
     </section>
 
-    <section class="section console-section">
-      <div class="shell">
-        <div class="console-frame reveal">
-          <img src="assets/mission-console.webp" alt="Peregrine Mission Console engineering interface" loading="lazy" />
-          <div class="console-overlay">
-            <p class="kicker">FOVEA / Mission Console</p>
-            <h2>See the network as one system.</h2>
-            <p>
-              Current engineering software supports scenario work, node and network state,
-              sensor ingestion, cooperative tracks, replay, and operator-facing mission context.
-            </p>
-            <a class="text-link strong" href="pacn-01.html#software">View software direction <span>↗</span></a>
+    <section class="section flow-section" id="fovea-flow">
+      <div class="shell flow-grid">
+        <div class="flow-copy reveal">
+          <p class="kicker">FOVEA / Mission Software</p>
+          <h2>Turn disconnected data into coordinated state.</h2>
+          <p>
+            FOVEA is designed to translate heterogeneous sensor and platform inputs into a shared mission model,
+            preserve where information came from, correlate observations, and distribute useful state across the network.
+          </p>
+          <a class="text-link strong" href="pacn-01.html#software">Explore the software architecture <span>↗</span></a>
+        </div>
+
+        <div class="flow-visual reveal" aria-label="Animated FOVEA data-flow architecture">
+          <div class="flow-track" aria-hidden="true">
+            <div class="flow-block">
+              <span>01</span>
+              <strong>INGEST</strong>
+              <small>RF / RADAR / EO-IR / PLATFORM</small>
+            </div>
+            <div class="flow-link"><i></i><i></i><i></i></div>
+            <div class="flow-block">
+              <span>02</span>
+              <strong>NORMALIZE</strong>
+              <small>COMMON MISSION OBJECTS</small>
+            </div>
+            <div class="flow-link"><i></i><i></i><i></i></div>
+            <div class="flow-block flow-block-core">
+              <span>03</span>
+              <strong>FUSE</strong>
+              <small>TRACK / PROVENANCE / STATE</small>
+            </div>
+            <div class="flow-link"><i></i><i></i><i></i></div>
+            <div class="flow-block">
+              <span>04</span>
+              <strong>COORDINATE</strong>
+              <small>TASK / SHARE / UPDATE</small>
+            </div>
+          </div>
+          <div class="flow-status">
+            <span>REPRESENTATIVE LOGIC FLOW</span>
+            <span>DISTRIBUTED / MODULAR / SENSOR-AGNOSTIC</span>
           </div>
         </div>
       </div>
@@ -327,8 +356,8 @@
       </div>
       <div class="footer-meta">
         <span>El Paso, Texas</span>
-        <span>UEI XJT8AM2R4MT8</span>
-        <span>CAGE 225F1</span>
+        <span>Delaware corporation</span>
+        <span>Defense + dual-use systems</span>
       </div>
       <div class="footer-links">
         <a href="capabilities.html">Capabilities</a>
